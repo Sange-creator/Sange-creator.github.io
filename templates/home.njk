@@ -1,19 +1,42 @@
 {% extends 'layout.njk' %}
 {% block content %}
-<section class="intro intro-revised" aria-labelledby="intro-title">
-  <div class="intro-main">
-    <p class="intro-kicker">Wireless systems · Machine learning</p>
-    <h1 id="intro-title">When should a phone change cells?</h1>
+<section class="intro intro-revised hero-layout" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="intro-kicker">{{ profile.license }}</p>
+    <h1 id="intro-title">{{ profile.professionalTitle }}</h1>
+    <p class="hero-fieldline">Wireless communications <span aria-hidden="true">×</span> AI/ML</p>
     <div class="intro-copy">
-      <p>I’m an electronics and communication engineering graduate exploring how machine learning can help wireless networks make better decisions as people move. A handover can improve a connection, but frequent switching can also disrupt it.</p>
-      <p>My first-author study applies graph-based reinforcement learning to this problem and was accepted for presentation at the <strong>19th IOE Graduate Conference (2026)</strong>. It grew from our one-year final project; I worked collaboratively on implementation, evaluation, validation, analysis, and manuscript revision.</p>
+      <p>I’m an Electronics, Communication and Information Engineer licensed by the Nepal Engineering Council, exploring how AI/ML can improve wireless systems. My first-author study—accepted for the <strong>19th IOE Graduate Conference</strong>—uses graph attention and Double DQN to study cellular handover; I contributed to implementation, evaluation, validation, analysis, and manuscript revision.</p>
+      <p>My one-year final project and NTC internship strengthened my interest in radio access networks, 5G/6G, deep learning, neural networks, and graph neural networks. I keep learning by building and evaluating ideas, and I’m seeking funded graduate research where I can study communication systems and AI/ML together.</p>
     </div>
     <div class="intro-actions" role="group" aria-label="Research and CV">
       <a class="primary-link" href="/research/">Read the research</a>
       <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">Academic CV (PDF)</a>
     </div>
-    <p class="availability">Seeking funded master’s or PhD research opportunities for Fall 2027.</p>
+    <p class="availability">Master’s or PhD research opportunities · Fall 2027</p>
   </div>
+  <aside class="hero-contact" aria-label="Profile and contact links">
+    <img class="hero-portrait" src="/assets/images/saange-tamang.webp" width="{{ sizes['saange-tamang'].width }}" height="{{ sizes['saange-tamang'].height }}" alt="Portrait of Saange Tamang" fetchpriority="high">
+    <div class="hero-contact-heading">
+      <h2>{{ profile.name }}</h2>
+      <p>{{ profile.license }}</p>
+      <p>Institute of Engineering · Tribhuvan University</p>
+    </div>
+    <nav class="social-links" aria-label="Contact and social profiles">
+      <a class="social-link" href="mailto:{{ profile.email }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3.5 5.5h17v13h-17z"/><path d="m4 6 8 6.5L20 6"/></svg>
+        <span><strong>Email</strong><span>{{ profile.email }}</span></span>
+      </a>
+      <a class="social-link" href="{{ profile.linkedin }}">
+        <svg class="brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5.2 8.7H2.1V21h3.1zM3.65 3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6M21.9 13.9c0-3.7-2-5.5-4.7-5.5a4.1 4.1 0 0 0-3.7 2v-1.7h-3V21h3.1v-6.1c0-1.6.3-3.2 2.4-3.2 2 0 2.1 1.9 2.1 3.3V21h3.1z"/></svg>
+        <span><strong>LinkedIn</strong><span>linkedin.com/in/saange-tamang</span></span>
+      </a>
+      <a class="social-link" href="{{ profile.github }}">
+        <svg class="brand-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.7 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2v3c0 .3.2.6.8.5A11.1 11.1 0 0 0 12 .9Z"/></svg>
+        <span><strong>GitHub</strong><span>github.com/Sange-creator</span></span>
+      </a>
+    </nav>
+  </aside>
 </section>
 
 <section class="home-section featured-research" aria-labelledby="research-heading">
@@ -39,20 +62,23 @@
   </div>
 </section>
 
-<section class="interests research-directions" aria-label="Research interests and next questions">
-  <div>
-    <h2>Wireless communications</h2>
-    <p>Mobility management, cellular network optimization, and 5G/6G networks.</p>
-    <p class="interest-question">How do delayed or imperfect signal and load observations affect handover decisions?</p>
-  </div>
-  <div>
-    <h2>Machine learning</h2>
-    <p>Reinforcement learning, graph neural networks, and broader applications of AI/ML.</p>
-    <p class="interest-question">When does graph structure help a learned policy, and does that benefit survive a change in network topology?</p>
+<section class="home-section interests research-directions" aria-labelledby="interests-heading" data-reveal>
+  <div class="section-heading"><h2 id="interests-heading">Research interests</h2><p>Questions across communication systems and learning</p></div>
+  <div class="interest-fields">
+    <article class="interest-field">
+      <p class="interest-index">01 / COMMUNICATION SYSTEMS</p>
+      <h3>Wireless &amp; radio access networks</h3>
+      <p>Wireless communications · 5G/6G · RAN · mobility management · cellular network optimization</p>
+    </article>
+    <article class="interest-field">
+      <p class="interest-index">02 / INTELLIGENT METHODS</p>
+      <h3>AI/ML for network decisions</h3>
+      <p>Machine learning · deep learning · neural networks · graph neural networks · reinforcement learning</p>
+    </article>
   </div>
 </section>
 
-<section class="home-section" aria-labelledby="projects-heading">
+<section class="home-section" aria-labelledby="projects-heading" data-reveal>
   <div class="section-heading"><h2 id="projects-heading">Projects &amp; practical work</h2><a href="/projects/">Project details and source</a></div>
   <div class="project-index">
     <article class="entry project-index-entry">
@@ -94,7 +120,7 @@
   </div>
 </section>
 
-<section class="home-section" id="experience" aria-labelledby="experience-heading">
+<section class="home-section" id="experience" aria-labelledby="experience-heading" data-reveal>
   <div class="section-heading"><h2 id="experience-heading">Telecommunications experience</h2></div>
   <div class="section-body">
     <article class="entry">
@@ -106,22 +132,26 @@
   </div>
 </section>
 
-<section class="home-section" aria-labelledby="education-heading">
+<section class="home-section" id="education" aria-labelledby="education-heading" data-reveal>
   <div class="section-heading"><h2 id="education-heading">Education</h2></div>
   <div class="section-body">
-    {% for education in profile.education %}
-    <article class="entry education-entry">
-      <div class="date-line"><h3>{{ education.heading }}</h3>{% if education.period %}<span class="date">{{ education.period }}</span>{% endif %}</div>
-      {% if education.institutionNote %}<p class="meta">{{ education.institutionNote }}</p>{% endif %}
-      {% if education.qualification %}<p>{{ education.qualification }}</p>{% endif %}
-      {% if education.result %}<p class="education-result"><strong>{{ education.result }}</strong></p>{% endif %}
-    </article>
+    <ol class="education-timeline" data-reveal aria-label="Education timeline">
+    {% for education in profile.educationTimeline %}
+      <li class="timeline-entry" data-reveal>
+        <time class="timeline-period">{{ education.period }}</time>
+        <div class="timeline-content">
+          <h3>{{ education.heading }}</h3>
+          {% if education.institution %}<p class="meta">{{ education.institution }}</p>{% endif %}
+          {% if education.result %}<p class="timeline-result"><strong>{{ education.result }}</strong></p>{% endif %}
+        </div>
+      </li>
     {% endfor %}
-    <p class="small-note qualification-note">Nepal Engineering Council engineering licensing examination passed.</p>
+    </ol>
+    <p class="small-note qualification-note">{{ profile.license }}</p>
   </div>
 </section>
 
-<section class="home-section" aria-labelledby="courses-heading">
+<section class="home-section" aria-labelledby="courses-heading" data-reveal>
   <div class="section-heading"><h2 id="courses-heading">Continuing to learn</h2><p>Alongside projects and research</p></div>
   <div class="section-body">
     <ul class="course-list course-list-home">
@@ -133,7 +163,7 @@
   </div>
 </section>
 
-<section class="home-section contact-section" aria-labelledby="contact-heading">
+<section class="home-section contact-section" aria-labelledby="contact-heading" data-reveal>
   <div class="section-heading"><h2 id="contact-heading">Graduate research</h2></div>
   <div class="section-body">
     <p>I’m seeking a funded, research-based master’s or PhD opportunity for Fall 2027. I’m particularly interested in groups studying wireless network optimization, learning-based control, or reliable applied ML.</p>

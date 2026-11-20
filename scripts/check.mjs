@@ -41,12 +41,20 @@ for (const filename of ['Saange_Tamang_Academic_CV.pdf', 'Saange_Tamang_Research
 assert(!files.some(f => /transcript|TRIBHUVAN UNIVERSITY|\.env|credential|token\.json/i.test(f)), 'Private source file in public output');
 const home = html.get(join(root, 'index.html'));
 assert(home.includes('Wireless communications') && home.includes('Machine learning'), 'Missing balanced interests');
+assert(home.includes('Electronics, Communication and Information Engineer'), 'Missing engineering identity');
+assert(home.includes('Licensed Engineer') && home.includes('Nepal Engineering Council'), 'Missing professional license');
+assert(home.toLowerCase().includes('wireless communications') && home.includes('5G/6G') && home.toLowerCase().includes('radio access networks'), 'Missing wireless research interests');
+assert(home.toLowerCase().includes('deep learning') && home.toLowerCase().includes('neural networks') && home.toLowerCase().includes('graph neural networks'), 'Missing AI/ML research interests');
+assert(home.includes('class="social-link"') && home.includes('linkedin.com/in/saange-tamang') && home.includes('github.com/Sange-creator'), 'Missing icon-led social links');
 assert(home.includes('semesters 7–8') && home.includes('Semester 6'), 'Missing corrected project history');
 assert(home.includes('Accepted for presentation'), 'Missing research status');
 assert(home.includes('First Division') && !home.includes('top of faculty'), 'Unexpected academic claim');
-for (const text of ['Kathmandu Model College', 'Secondary Education Examination (SEE)', 'GPA 3.9', '2019', 'Paschimanchal Campus']) {
+for (const text of ['Kathmandu Model College', 'Secondary Education Examination (SEE)', 'GPA 3.9', '2019', '2019–2021', 'Paschimanchal Campus']) {
   assert(home.includes(text) && html.get(join(root, 'cv/index.html')).includes(text), 'Missing education detail: ' + text);
 }
+assert((home.match(/class="timeline-entry"/g) || []).length === 3, 'Expected all three education timeline entries');
+assert(html.get(join(root, 'cv/index.html')).includes('education-timeline'), 'Missing CV education timeline');
+assert(!home.includes('profile-rail') && !html.get(join(root, 'research/index.html')).includes('profile-rail'), 'Profile rail should not constrict or repeat across pages');
 const projectAnchors = ['major-project', 'solvote', 'jamjamnepal', 'computer-networks', 'clipboard-history'];
 const projectPositions = projectAnchors.map(id => home.indexOf('href="/projects/#' + id + '"'));
 assert(projectPositions.every((position, index) => position >= 0 && (index === 0 || position > projectPositions[index - 1])), 'Unexpected homepage project order');
