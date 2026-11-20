@@ -1,0 +1,44 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<div class="page-heading"><h1>Curriculum vitae</h1><p>My research, telecommunications experience, and technical preparation in wireless communications and machine learning.</p></div>
+<div class="download-list">
+  <section class="download-item" aria-labelledby="academic-cv-heading"><h2 id="academic-cv-heading">Academic CV</h2><p>Research, education, experience, projects, and further learning. Two pages.</p><a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">View academic CV <span class="small-note">(PDF)</span></a><div class="inline-links"><a href="/assets/documents/Saange_Tamang_Academic_CV.pdf" download>Download</a></div></section>
+  <section class="download-item" aria-labelledby="brief-cv-heading"><h2 id="brief-cv-heading">Concise research CV</h2><p>A one-page version for an initial introduction or research inquiry.</p><a href="/assets/documents/Saange_Tamang_Research_CV.pdf">View concise CV <span class="small-note">(PDF)</span></a><div class="inline-links"><a href="/assets/documents/Saange_Tamang_Research_CV.pdf" download>Download</a></div></section>
+</div>
+<section class="section-row" aria-labelledby="education-heading">
+  <h2 class="section-label" id="education-heading">Education</h2>
+  <div class="section-body">
+    <div class="date-line"><h3>Tribhuvan University · Institute of Engineering</h3><span class="date">2022–2026</span></div>
+    <p>B.E. in Electronics, Communication and Information Engineering<br>Paschimanchal Campus (Western Region Campus), Pokhara, Nepal</p>
+    <p><strong>79.02% aggregate · First Division</strong></p>
+    <p class="small-note">Relevant coursework: Wireless Communication, Computer Network, Telecommunications, Artificial Intelligence, Data Mining, Probability &amp; Statistics, and Discrete Structure.</p>
+  </div>
+</section>
+<section class="section-row" aria-labelledby="research-heading">
+  <h2 class="section-label" id="research-heading">Research</h2>
+  <div class="section-body"><h3 class="publication-title">{{ profile.paperTitle }}</h3><p><strong>Saange Tamang</strong>, Sulav Kandel</p><p class="status">{{ profile.paperStatus }}<br><span class="small-note">Proceedings citation pending.</span></p><p>Collaborative contributions to coding, evaluation, validation, analysis, and manuscript preparation.</p><a href="/research/">Methods, findings, and supporting material</a></div>
+</section>
+<section class="section-row" aria-labelledby="experience-heading">
+  <h2 class="section-label" id="experience-heading">Experience</h2>
+  <div class="section-body"><div class="date-line"><h3>Nepal Telecom · Engineering Intern</h3><span class="date">12 Jan – 27 Mar 2026</span></div><p class="meta">Pokhara, Nepal</p><p>Handover and load-balancing activities; exposure to GSM/LTE planning, operation, optimization, and maintenance.</p></div>
+</section>
+<section class="section-row" aria-labelledby="preparation-heading">
+  <h2 class="section-label" id="preparation-heading">Technical preparation</h2>
+  <div class="section-body">
+    <dl>
+      <div class="skill-row"><dt>Wireless systems</dt><dd>Cellular handover, LTE Event A3-style control, RSRP/SINR, simulated load models, mobility and network evaluation.</dd></div>
+      <div class="skill-row"><dt>Machine learning</dt><dd>Graph attention, dueling Double DQN, replay buffers, exploration, feasible-action masking, and model evaluation.</dd></div>
+      <div class="skill-row"><dt>Research tools</dt><dd>Python, PyTorch, NumPy, Matplotlib, Git/GitHub, and LaTeX; paired comparisons and cluster-bootstrap analysis.</dd></div>
+      <div class="skill-row"><dt>Software projects</dt><dd>JavaScript/TypeScript, React, Node.js/Express, MongoDB, Solana Web3.js; Swift in the supporting macOS project.</dd></div>
+    </dl>
+    <p class="small-note">5G/6G networks and broader AI/ML applications are research interests under exploration.</p>
+  </div>
+</section>
+<section class="section-row" id="courses" aria-labelledby="courses-heading">
+  <h2 class="section-label" id="courses-heading">Course credentials</h2>
+  <div class="section-body"><p class="small-note">Completed online courses, with links to the issuer’s verification record.</p><ul class="course-list">
+    {% for course in profile.courses %}<li><a href="{{ course.url }}">{{ course.title }}</a><span class="meta">{{ course.issuer }} · {{ course.date }}</span></li>{% endfor %}
+  </ul></div>
+</section>
+<section class="section-row" aria-labelledby="qualification-heading"><h2 class="section-label" id="qualification-heading">Qualification</h2><div class="section-body"><p>Nepal Engineering Council engineering licensing examination passed.</p></div></section>
+{% endblock %}

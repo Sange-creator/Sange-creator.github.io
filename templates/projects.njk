@@ -1,0 +1,36 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<div class="page-heading"><h1>Selected projects</h1><p>Research and engineering work across wireless networks, machine learning, and software systems.</p></div>
+
+<article class="project-block" id="major-project">
+  <h2>GNN-DQN Handover Optimization &amp; Load Balancing</h2>
+  <p class="project-meta">Undergraduate major project · One year, semesters 7–8 · 2025–2026</p>
+  <p>We investigated graph-based reinforcement learning for LTE handover optimization and load balancing. The project explored how learned serving-cell preferences could be considered alongside conventional handover and self-organizing-network mechanisms.</p>
+  <p>This was a four-person team project, supervised by Asst. Prof. Hom Nath Tiwari. I contributed to coding, evaluation, validation, and analysis as part of the team.</p>
+  <div class="project-columns">
+    <div><h3>Wireless perspective</h3><p>Cellular mobility, signal conditions, cell load, and the tradeoff between service and unnecessary switching.</p></div>
+    <div><h3>Learning perspective</h3><p>Graph representations, attention-based learning, deep reinforcement learning, and comparisons with configured conventional controllers.</p></div>
+  </div>
+  <div class="notebook"><p><strong>From project to paper.</strong> We subsequently revised the broader major-project work into a two-author conference study focused on handover optimization. Its evaluation and reported results are presented separately on the research page.</p></div>
+  <div class="inline-links"><a href="https://github.com/Sange-creator/GNN-DQN-Handover-LoadBalancing">Project repository and report</a><a href="/research/">Conference study</a></div>
+</article>
+
+<article class="project-block" id="solvote">
+  <h2>SolVote</h2>
+  <p class="project-meta">Undergraduate minor project · Semester 6 · February–August 2025</p>
+  <p>A collaborative electronic-voting and token-distribution prototype covering three stages: voter and candidate registration, Solana-based voting-token issuance, and digital ballot casting.</p>
+  <p>The implementation brings together React and TypeScript interfaces, Node.js/Express services, MongoDB data models, and Solana Web3.js. I contributed to the project’s coding and evaluation within the team.</p>
+  <p>RFID and fingerprint authentication were considered as future integrations. This is an academic prototype; production election use would require further security and privacy work.</p>
+  <div class="inline-links"><a href="https://github.com/Sange-creator/Project-Solvote">Project repository</a></div>
+</article>
+
+<article class="project-block" id="clipboard-history">
+  <h2>Clipboard History for macOS</h2>
+  <p class="project-meta">Supporting software project · Swift · Native macOS application</p>
+  <p>A menu-bar application that keeps a searchable history of copied text locally on the Mac. It supports finding and reusing clips, pausing capture, clearing history, and a configurable keyboard shortcut.</p>
+  <p>The repository includes the Swift implementation, tests, and a script to build a universal macOS app. The application has no account or server requirement.</p>
+  <p class="small-note">Clipboard history is stored locally as unencrypted text. This project is a productivity tool, not a secret store.</p>
+  <div class="inline-links"><a href="https://github.com/Sange-creator/ClipboardHistory">Source and build instructions</a></div>
+</article>
+<section class="closing"><h2>Current interests</h2><p>I’m exploring new research questions in wireless communications and AI/ML, including network optimization, generalization, and learning under practical system constraints.</p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></section>
+{% endblock %}

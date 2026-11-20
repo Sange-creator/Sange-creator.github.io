@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+.qa/
+*.log
+*.aux
+*.out
+*.synctex.gz
+*.xdv
+.env*
+cv-source/.build/

@@ -1,0 +1,22 @@
+{
+  "name": "saange-tamang-research-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Saange Tamang's personal academic website: wireless communications and machine learning.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs && html-validate 'dist/**/*.html'",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@fontsource/source-sans-3": "^5.3.1",
+    "@fontsource/source-serif-4": "^5.3.1",
+    "html-validate": "^11.21.1",
+    "nunjucks": "^3.2.4",
+    "sharp": "^0.35.5"
+  }
+}

@@ -1,0 +1,111 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<div class="page-heading">
+  <h1>Research</h1>
+  <p>My current work connects cellular mobility management with graph learning and reinforcement learning.</p>
+</div>
+<article>
+  <header class="paper-header">
+    <h2>{{ profile.paperTitle }}</h2>
+    <p class="authors"><strong>Saange Tamang</strong>, Sulav Kandel<br><span class="small-note">Paschimanchal Campus, Institute of Engineering, Tribhuvan University</span></p>
+    <p class="status">{{ profile.paperStatus }}<br><span class="small-note">Proceedings citation pending.</span></p>
+    <div class="inline-links">
+      <a href="/assets/documents/handover-study.pdf">Read paper <span class="small-note">(PDF)</span></a>
+      <a href="{{ profile.code }}">Research code</a>
+      <a href="/assets/documents/handover-study.bib" download>Download citation</a>
+    </div>
+  </header>
+
+  <section class="section-row" aria-labelledby="question-heading">
+    <h2 class="section-label" id="question-heading">The question</h2>
+    <div class="section-body">
+      <p>As a phone travels, the strongest nearby cell and the traffic on each cell change. Switching too often can interrupt service; staying with a weak or congested cell can reduce data delivery.</p>
+      <p>We investigated whether a learned serving-cell controller could improve that balance relative to a configured LTE Event A3-style reference. The study measures service quality and switching behavior together.</p>
+    </div>
+  </section>
+
+  <section class="section-row" aria-labelledby="contribution-heading">
+    <h2 class="section-label" id="contribution-heading">My contribution</h2>
+    <div class="section-body">
+      <p>I contributed to the implementation, evaluation, validation, analysis, and manuscript preparation, working collaboratively with Sulav Kandel.</p>
+      <p>The paper grew from our one-year undergraduate major project in semesters 7–8. We revised that broader handover-and-load-balancing work into a focused, two-author study of handover optimization.</p>
+      <p><a href="/projects/#major-project">Undergraduate project background</a></p>
+    </div>
+  </section>
+
+  <section class="section-row" aria-labelledby="method-heading">
+    <h2 class="section-label" id="method-heading">Method</h2>
+    <div class="section-body">
+      <p>We represented 46 cells as a proximity graph, with 15 features per cell describing simulated signal, load, mobility, and recent connection history. A graph-attention encoder and dueling Double-DQN model selected among feasible serving-cell actions.</p>
+      <p>Three frozen trained policies were evaluated against the same configured A3-style controller. Within each comparison, the external route, radio, and traffic conditions were matched.</p>
+      <figure class="figure" id="study-layout">
+        <a href="/assets/images/cell-layout.webp" aria-label="Open the full-size study layout figure"><img src="/assets/images/cell-layout.webp" width="{{ sizes['cell-layout'].width }}" height="{{ sizes['cell-layout'].height }}" alt="Two panels show the 46 study locations and 96 proximity links. Node colors indicate neighbor counts, not radio quality." loading="lazy"></a>
+        <figcaption>The study’s site-as-cell layout and candidate-neighbor graph. Links connect locations within 1.5 km; these are proximity links rather than a verified operator neighbor list.<span class="attribution">Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL). Figure from the manuscript.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-row" aria-labelledby="evaluation-heading">
+    <h2 class="section-label" id="evaluation-heading">Evaluation</h2>
+    <div class="section-body">
+      <p>The main evaluation covered <strong>639 reserved Kathmandu-area cases</strong> and <strong>540 Pokhara route–layout–condition groups</strong>. The transfer groups combine 60 routes, three synthetic cell layouts, and three condition pairs.</p>
+      <p>We assessed aggregate throughput, handovers, ping-pongs, weak-service time, and short completed cell stays. Paired 95% cluster-bootstrap intervals used 2,000 resamples, grouping by origin–destination pair or route.</p>
+      <figure class="figure">
+        <a href="/assets/images/evaluation-protocol.webp" aria-label="Open the full-size evaluation protocol"><img src="/assets/images/evaluation-protocol.webp" width="{{ sizes['evaluation-protocol'].width }}" height="{{ sizes['evaluation-protocol'].height }}" alt="Protocol diagram describing the training, development, reserved-route and Pokhara transfer sets, including overlap disclosures." loading="lazy"></a>
+        <figcaption>Data partitions and transfer design from the paper. Reserved route IDs do not imply geographically disjoint roads.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-row" aria-labelledby="findings-heading">
+    <h2 class="section-label" id="findings-heading">Findings</h2>
+    <div class="section-body">
+      <section class="table-wrap" aria-label="Reported simulation outcomes" tabindex="0">
+        <table>
+          <caption>Aggregate changes relative to the configured A3-style reference. Ranges span the three frozen policies.</caption>
+          <thead><tr><th scope="col">Evaluation</th><th scope="col">Throughput</th><th scope="col">Handovers/hour</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Kathmandu-area<br><span class="small-note">639 reserved cases</span></th><td class="num">8.86–9.99% higher</td><td class="num">36.08–53.00% fewer</td></tr>
+            <tr><th scope="row">Pokhara transfer<br><span class="small-note">540 scenario groups</span></th><td class="num">3.66–3.85% higher</td><td class="num">23.68–47.10% fewer</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <p>All three policies delivered higher aggregate throughput and fewer handovers in these simulations. They also had fewer ping-pongs and less weak-service time. However, the proportion of short completed stays increased for all three policies on the reserved routes; transfer results varied by policy.</p>
+      <figure class="figure">
+        <a href="/assets/documents/paired-primary-outcomes.pdf" aria-label="Open the original paired-outcomes figure PDF"><img src="/assets/images/paired-outcomes.webp" width="{{ sizes['paired-outcomes'].width }}" height="{{ sizes['paired-outcomes'].height }}" alt="Paired throughput, handover and ping-pong differences for training seeds 17, 27 and 37, with 95 percent cluster-bootstrap intervals, across same-area and Pokhara tests." loading="lazy"></a>
+        <figcaption>Paired differences from A3, with 95% cluster-bootstrap intervals. The intervals describe the sampled scenarios and frozen policies; they do not account for all variation from retraining or testing other cities.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-row" aria-labelledby="limits-heading">
+    <h2 class="section-label" id="limits-heading">Interpretation</h2>
+    <div class="section-body">
+      <p>These are simulation findings. The study uses simplified radio and resource-sharing models, three training seeds, some shared roads between training and reserved routes, and simulator-provided information. Pokhara uses real road geometry with synthetic cell layouts.</p>
+      <p>The comparison does not establish live-network performance or isolate the benefit of graph attention. A later-added load-aware rule is an exploratory diagnostic, separate from the main configured reference comparison.</p>
+      <p>The public repository contains code, configurations, numerical checks, and the manuscript. Full reproduction of the reported results additionally requires route/layout inputs, frozen checkpoints, and complete case records that are outside the public release.</p>
+      <div class="inline-links"><a href="{{ profile.code }}/blob/main/docs/RESULTS.md">Results and limitations</a><a href="{{ profile.code }}/blob/main/docs/DATA_AND_REPRODUCIBILITY.md">Data and reproduction details</a></div>
+      <details class="citation">
+        <summary>Citation</summary>
+        <pre><code id="bibtex">@unpublished{tamang2026handover,
+  author = {Tamang, Saange and Kandel, Sulav},
+  title = {Graph-Attention Double-DQN for Cellular Handover:
+           A Paired Simulation Evaluation},
+  year = {2026},
+  note = {Accepted for presentation at the 19th IOE
+          Graduate Conference; proceedings citation pending},
+  url = {https://github.com/Sange-creator/graph-attention-double-dqn-cellular-handover}
+}</code></pre>
+        <button type="button" class="copy-button" data-copy-citation hidden>Copy BibTeX</button><span class="copy-status" data-copy-status role="status" aria-live="polite"></span>
+      </details>
+    </div>
+  </section>
+</article>
+<section class="section-row" aria-labelledby="interests-heading">
+  <h2 class="section-label" id="interests-heading">Looking ahead</h2>
+  <div class="section-body">
+    <p>I’m exploring how learning-based controllers generalize when network conditions or topology change, and how imperfect observations affect their decisions. I’m also interested in 5G/6G systems, edge AI, and other engineering applications of machine learning.</p>
+    <p class="small-note">These are research interests and questions for future work.</p>
+  </div>
+</section>
+{% endblock %}

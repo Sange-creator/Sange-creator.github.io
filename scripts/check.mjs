@@ -1,0 +1,47 @@
+import { readdir, readFile, stat } from 'node:fs/promises';
+import { join, resolve } from 'node:path';
+import assert from 'node:assert/strict';
+
+const root = resolve(import.meta.dirname, '../dist');
+async function walk(dir) {
+  const files = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) files.push(...await walk(path)); else files.push(path);
+  }
+  return files;
+}
+const files = await walk(root);
+const pages = files.filter(p => p.endsWith('.html'));
+const html = new Map(await Promise.all(pages.map(async path => [path, await readFile(path, 'utf8')])));
+let checked = 0;
+for (const [path, source] of html) {
+  assert.equal((source.match(/<h1[ >]/g) || []).length, 1, path + ': expected one h1');
+  assert(source.includes('lang="en"'), path + ': missing language');
+  assert(source.includes('name="description"'), path + ': missing description');
+  assert(!/lorem ipsum|TODO|your name|placeholder/i.test(source), path + ': unfinished content');
+  for (const match of source.matchAll(/(?:href|src)="([^"]+)"/g)) {
+    const value = match[1].replaceAll('&amp;', '&');
+    if (/^(https?:|mailto:|data:)/.test(value)) continue;
+    const url = new URL(value, 'https://sange-creator.github.io' + path.slice(root.length));
+    let local = join(root, decodeURIComponent(url.pathname));
+    if (url.pathname.endsWith('/')) local = join(local, 'index.html');
+    await stat(local).catch(() => { throw Error(path + ': broken local link ' + value); });
+    if (url.hash && local.endsWith('.html')) {
+      const target = html.get(local) || await readFile(local, 'utf8');
+      assert(target.includes('id="' + decodeURIComponent(url.hash.slice(1)) + '"'), path + ': missing fragment ' + value);
+    }
+    checked++;
+  }
+}
+for (const filename of ['Saange_Tamang_Academic_CV.pdf', 'Saange_Tamang_Research_CV.pdf', 'handover-study.pdf']) {
+  const file = await readFile(join(root, 'assets/documents', filename));
+  assert(file.subarray(0, 5).toString() === '%PDF-', filename + ': not a PDF');
+}
+assert(!files.some(f => /transcript|TRIBHUVAN UNIVERSITY|\.env|credential|token\.json/i.test(f)), 'Private source file in public output');
+const home = html.get(join(root, 'index.html'));
+assert(home.includes('Wireless communications') && home.includes('Machine learning'), 'Missing balanced interests');
+assert(home.includes('semesters 7–8') && home.includes('Semester 6'), 'Missing corrected project history');
+assert(home.includes('Accepted for presentation'), 'Missing research status');
+assert(home.includes('First Division') && !home.includes('top of faculty'), 'Unexpected academic claim');
+console.log('Checked ' + pages.length + ' pages, ' + checked + ' local links/assets, PDFs, privacy exclusions, and core content.');

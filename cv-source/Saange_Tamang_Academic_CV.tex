@@ -1,0 +1,98 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=.68in,top=.58in,bottom=.62in]{geometry}
+\input{common}
+\hypersetup{pdftitle={Saange Tamang - Academic CV}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\color{muted}\footnotesize Saange Tamang\enspace |\enspace Academic CV}
+\fancyfoot[R]{\color{muted}\footnotesize\thepage\ /\ 2}
+\begin{document}
+\fontsize{10.6}{13.3}\selectfont
+\nameheader
+
+\sect{Research interests}
+\textbf{Wireless communications:} mobility management, cellular network optimization, and 5G/6G networks.\par
+\textbf{AI/ML:} reinforcement learning, graph neural networks, generalization, and reliable model evaluation.
+
+\sect{Education}
+\entry{Tribhuvan University, Institute of Engineering}{2022--2026}
+B.E. in Electronics, Communication and Information Engineering\par
+\meta{Paschimanchal Campus (Western Region Campus), Pokhara, Nepal}
+\textbf{79.02\% aggregate; First Division.}\par
+Selected results: Discrete Structure 95/100; Computer Network 86/100; Data Mining 81/100; Project II 97/100.
+
+\sect{Conference paper}
+\textbf{Saange Tamang}, Sulav Kandel. ``Graph-Attention Double-DQN for Cellular Handover: A Paired Simulation Evaluation.''\par
+\meta{19th IOE Graduate Conference, 2026. Accepted for presentation; proceedings citation pending.}
+\paperlink\enspace |\enspace\codelink
+
+\sect{Research experience}
+\entry{Graph learning and reinforcement learning for cellular handover}{2026}
+\meta{First author; collaborative research with Sulav Kandel}
+\begin{itemize}
+\item Revised the year-long undergraduate major project into a focused two-author handover study; contributed collaboratively to coding, evaluation, validation, analysis, and manuscript preparation.
+\item Studied a graph-attention encoder and dueling Double-DQN controller using a 46-cell graph, 15 features per cell, and feasible-action masking, against a configured LTE Event A3-style reference.
+\item Evaluated three frozen policies under matched simulation conditions across 639 reserved Kathmandu-area cases and 540 Pokhara route--layout--condition groups.
+\item Reported 8.86--9.99\% higher aggregate throughput and 36.1--53.0\% fewer handovers per hour in Kathmandu tests; Pokhara transfer tests showed 3.66--3.85\% higher throughput, relative to the configured reference.
+\item Used paired 95\% cluster-bootstrap intervals (2,000 resamples) and assessed ping-pongs, weak-service time, and short-stay tradeoffs alongside throughput and switching.
+\end{itemize}
+\meta{Scope: simulated radio and traffic conditions; Pokhara uses real road geometry with synthetic cell layouts. Results do not establish live-network performance or isolate the causal benefit of graph attention. Public code does not include all assets required to reproduce the reported evaluation.}
+
+\sect{Telecommunications experience}
+\entry{Nepal Telecom (NTC), Pokhara}{12 Jan--27 Mar 2026}
+\meta{Engineering Intern}
+\begin{itemize}
+\item Participated in handover and load-balancing activities and gained exposure to GSM/LTE network planning, operation, optimization, and maintenance.
+\item Connected practical cellular-network observations with final-year work on mobility management and network optimization.
+\end{itemize}
+
+\newpage
+{\fontsize{15}{18}\selectfont\bfseries Saange Tamang}\hfill{\color{muted}\small Academic CV, continued}\par
+
+\sect{Selected engineering projects}
+\entry{GNN-DQN-Based Handover Optimization and Load Balancing}{2025--2026}
+\textbf{in LTE Networks}\par
+\meta{Major project; one year across semesters 7--8; four-person team}
+\meta{Supervisor: Asst. Prof. Hom Nath Tiwari}
+\begin{itemize}
+\item Collaborated on graph-based reinforcement learning for cellular handover and load balancing, exploring learned decisions alongside a self-organising-network control layer.
+\item Contributed to implementation, evaluation, validation, and analysis within the team. The later conference study revised the major project and narrowed the research question to handover optimization.
+\end{itemize}
+\href{https://github.com/Sange-creator/GNN-DQN-Handover-LoadBalancing}{Project code and report}
+
+\vspace{7pt}
+\entry{SolVote: Electronic Voting and Token Distribution Prototype}{Feb--Aug 2025}
+\meta{Undergraduate minor project; semester 6; collaborative engineering project}
+\begin{itemize}
+\item Contributed to a prototype spanning voter/candidate registration, Solana-based token issuance, and digital voting workflows.
+\item Worked with a React/TypeScript frontend and Node.js/Express, MongoDB, and Solana Web3.js components. RFID and fingerprint authentication were explored as planned integrations.
+\end{itemize}
+\meta{Academic prototype; not production election infrastructure.}
+\href{https://github.com/Sange-creator/Project-Solvote}{Project code}
+
+\sect{Technical preparation}
+\begin{tabularx}{\linewidth}{@{}p{1.15in}@{\hspace{9pt}}>{\raggedright\arraybackslash}X@{}}
+\textbf{Wireless systems} & LTE Event A3-style handover; RSRP/SINR; mobility and simulated cell-load models; service/switching tradeoff evaluation.\\[6pt]
+\textbf{AI/ML methods} & Graph attention; dueling Double DQN; replay buffers; action masking; epsilon-greedy exploration; matched policy evaluation.\\[6pt]
+\textbf{Research tools} & Python, PyTorch, NumPy, Matplotlib, Git/GitHub, and LaTeX.\\[6pt]
+\textbf{Evaluation} & Reproducible experiment configuration; paired comparisons; route-cluster bootstrap intervals; transfer-scenario analysis.\\[6pt]
+\textbf{Engineering} & C/C++ (coursework); JavaScript/TypeScript; React, Node.js/Express, MongoDB, and Solana Web3.js (project work).
+\end{tabularx}
+
+\sect{Selected course completions}
+\entry{\href{https://www.coursera.org/account/accomplishments/verify/3WMVQTJX2BQC}{Advanced Learning Algorithms}}{12 Sep 2026}
+\meta{DeepLearning.AI and Stanford Online, via Coursera}
+\vspace{4pt}
+\entry{\href{https://www.coursera.org/account/accomplishments/verify/H85L1YRD0MWM}{Supervised Machine Learning: Regression and Classification}}{31 Aug 2026}
+\meta{DeepLearning.AI and Stanford Online, via Coursera}
+\vspace{4pt}
+\entry{\href{https://www.coursera.org/account/accomplishments/verify/P4AO5YNOHQLD}{Claude Code: Software Engineering with Generative AI Agents}}{13 Aug 2026}
+\meta{Vanderbilt University, via Coursera}
+\vspace{4pt}
+\entry{\href{https://verify.skilljar.com/c/3isdp98xhia2}{Introduction to subagents}}{14 Aug 2026}
+\meta{Anthropic Education}
+
+\sect{Professional qualification}
+Nepal Engineering Council engineering licensing examination passed.
+\end{document}

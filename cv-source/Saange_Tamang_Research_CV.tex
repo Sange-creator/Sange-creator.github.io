@@ -1,0 +1,58 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=.61in,top=.48in,bottom=.48in]{geometry}
+\input{common}
+\hypersetup{pdftitle={Saange Tamang - Research CV}}
+\pagestyle{empty}
+\setlist[itemize]{itemsep=2pt,topsep=2pt}
+\setlength{\parskip}{1.5pt}
+\renewcommand{\sect}[1]{\par\vspace{5pt}{\color{accent}\fontsize{10.4}{12}\selectfont\bfseries #1}\par\vspace{2pt}{\color{rulegray}\hrule height .35pt}\vspace{3pt}}
+\begin{document}
+\fontsize{9.9}{12}\selectfont
+\nameheader
+
+\sect{Education}
+\entry{Tribhuvan University, Institute of Engineering}{2022--2026}
+B.E. in Electronics, Communication and Information Engineering\par
+\meta{Paschimanchal Campus (Western Region Campus), Pokhara, Nepal}
+\textbf{79.02\% aggregate; First Division.}
+
+\sect{Research interests}
+\textbf{Wireless:} mobility management, cellular network optimization, and 5G/6G networks.\par
+\textbf{AI/ML:} reinforcement learning, graph neural networks, generalization, and reliable evaluation.
+
+\sect{Conference paper}
+\textbf{Saange Tamang}, Sulav Kandel. ``Graph-Attention Double-DQN for Cellular Handover: A Paired Simulation Evaluation.''\par
+\meta{19th IOE Graduate Conference, 2026. Accepted for presentation; proceedings citation pending.}
+\paperlink\enspace |\enspace\codelink
+
+\sect{Research experience}
+\entry{Graph learning and reinforcement learning for cellular handover}{2026}
+\meta{First author; collaborative work with Sulav Kandel}
+\begin{itemize}
+\item Contributed to coding, evaluation, validation, analysis, and manuscript preparation for a focused extension of the undergraduate major project.
+\item Studied a graph-attention, dueling Double-DQN controller on a 46-cell graph with 15 features per cell and feasible-action masking; compared three frozen policies with a configured A3-style reference.
+\item Evaluated 639 reserved Kathmandu-area cases and 540 Pokhara transfer groups under matched simulation conditions. Reported 8.86--9.99\% higher throughput and 36.1--53.0\% fewer handovers/hour in Kathmandu; Pokhara throughput increased 3.66--3.85\% versus the reference.
+\item Used paired cluster-bootstrap intervals and assessed throughput, ping-pongs, weak-service time, and short-stay tradeoffs. Results describe simulation, not live-network performance or causal proof of graph attention's benefit.
+\end{itemize}
+
+\sect{Telecommunications experience}
+\entry{Nepal Telecom (NTC), Pokhara --- Engineering Intern}{12 Jan--27 Mar 2026}
+Participated in handover and load-balancing activities; gained exposure to GSM/LTE network planning, operation, optimization, and maintenance.
+
+\sect{Selected projects}
+\entry{GNN-DQN Handover Optimization and Load Balancing in LTE Networks}{2025--2026}
+\meta{Major project; one year, semesters 7--8; four-person team; supervisor: Asst. Prof. Hom Nath Tiwari}
+Collaborated on graph-based RL for mobility and load balancing; revised into the subsequent handover-focused conference study.\enspace\href{https://github.com/Sange-creator/GNN-DQN-Handover-LoadBalancing}{Code/report}\par\vspace{3pt}
+\entry{SolVote: Electronic Voting and Token Distribution Prototype}{Semester 6, 2025}
+Collaborative minor project using React/TypeScript, Node.js/Express, MongoDB, and Solana.\enspace\href{https://github.com/Sange-creator/Project-Solvote}{Code}
+
+\sect{Technical preparation}
+\textbf{Wireless:} LTE handover, RSRP/SINR, simulated load models, paired service/switching evaluation.\par
+\textbf{AI/ML:} graph attention, dueling Double DQN, replay buffers, action masking, transfer evaluation.\par
+\textbf{Tools:} Python, PyTorch, NumPy, Matplotlib, Git/GitHub, LaTeX; C/C++ (coursework).
+
+\sect{Courses and qualification}
+\href{https://www.coursera.org/account/accomplishments/verify/3WMVQTJX2BQC}{Advanced Learning Algorithms} (Sep 2026);\enspace
+\href{https://www.coursera.org/account/accomplishments/verify/H85L1YRD0MWM}{Supervised Machine Learning: Regression and Classification} (Aug 2026). DeepLearning.AI and Stanford Online, via Coursera.\par
+Nepal Engineering Council engineering licensing examination passed.
+\end{document}

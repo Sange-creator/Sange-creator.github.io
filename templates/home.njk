@@ -1,0 +1,123 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<section class="intro" aria-labelledby="intro-title">
+  <p class="affiliation">Electronics, Communication &amp; Information Engineering · Tribhuvan University</p>
+  <h1 id="intro-title">Saange Tamang</h1>
+  <div class="intro-copy">
+    <p>I’m an engineering graduate from Nepal, interested in <strong>wireless communications</strong> and <strong>machine learning</strong>, particularly where the two meet.</p>
+    <p>My recent work uses graph learning and reinforcement learning to study cellular handover optimization. I’m now exploring research ideas in 5G/6G networks and broader applications of AI/ML.</p>
+  </div>
+  <div class="contact-links" role="group" aria-label="Contact and profiles">
+    <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">CV <span class="small-note">(PDF)</span></a>
+    <a href="mailto:{{ profile.email }}">Email</a>
+    <a href="{{ profile.github }}">GitHub</a>
+    <a href="{{ profile.linkedin }}">LinkedIn</a>
+  </div>
+  <p class="availability">Seeking funded master’s or PhD research opportunities for Fall 2027.</p>
+</section>
+
+<section class="interests" aria-label="Research interests">
+  <div>
+    <h2>Wireless communications</h2>
+    <p>Mobility management and handover · Cellular network optimization · 5G/6G networks</p>
+  </div>
+  <div>
+    <h2>Machine learning</h2>
+    <p>Reinforcement learning · Graph neural networks · Generalization and reliable evaluation</p>
+  </div>
+</section>
+
+<section class="section-row" aria-labelledby="research-heading">
+  <div>
+    <h2 class="section-label" id="research-heading">Research</h2>
+    <p class="label-note">2026</p>
+  </div>
+  <div class="section-body">
+    <h3 class="publication-title"><a href="/research/">{{ profile.paperTitle }}</a></h3>
+    <p class="authors"><strong>Saange Tamang</strong>, Sulav Kandel</p>
+    <p class="status">{{ profile.paperStatus }}</p>
+    <div class="publication-overview">
+      <div>
+        <p class="publication-summary">How can a moving phone balance data delivery against unnecessary cell switching? We studied a graph-attention controller under matched simulation conditions, measuring both service and handover tradeoffs.</p>
+        <p class="publication-summary">I contributed to coding, evaluation, validation, analysis, and manuscript preparation in collaboration with my co-author.</p>
+        <div class="inline-links">
+          <a href="/research/">Study overview</a>
+          <a href="/assets/documents/handover-study.pdf">Paper <span class="small-note">(PDF)</span></a>
+          <a href="{{ profile.code }}">Code</a>
+        </div>
+      </div>
+      <figure>
+        <a href="/research/#study-layout" aria-label="View the study’s cell layout and neighbor graph">
+          <img src="/assets/images/cell-layout.webp" width="{{ sizes['cell-layout'].width }}" height="{{ sizes['cell-layout'].height }}" alt="The study’s cell locations and proximity graph over a Kathmandu-area map." loading="lazy">
+        </a>
+        <figcaption>Study layout and cell-neighbor graph.<br>Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section-row" aria-labelledby="projects-heading">
+  <h2 class="section-label" id="projects-heading">Selected projects</h2>
+  <div class="section-body">
+    <article class="entry">
+      <h3><a href="/projects/#major-project">GNN-DQN Handover Optimization &amp; Load Balancing</a></h3>
+      <p class="meta">Major project · One year, semesters 7–8 · 2025–2026</p>
+      <p>A four-person project exploring graph-based reinforcement learning for LTE mobility and load balancing. We subsequently revised the work into a focused, two-author conference study of handover optimization.</p>
+    </article>
+    <article class="entry">
+      <h3><a href="/projects/#solvote">SolVote</a></h3>
+      <p class="meta">Minor project · Semester 6 · 2025</p>
+      <p>A collaborative engineering prototype for voter registration, Solana-based token issuance, and electronic voting.</p>
+    </article>
+    <article class="entry">
+      <h3><a href="/projects/#clipboard-history">Clipboard History for macOS</a></h3>
+      <p class="meta">Supporting software project · Swift</p>
+      <p>A native menu-bar application for searching and reusing locally stored text clips, with keyboard shortcuts and no server requirement.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-row" id="experience" aria-labelledby="experience-heading">
+  <h2 class="section-label" id="experience-heading">Experience</h2>
+  <div class="section-body">
+    <article class="entry">
+      <div class="date-line"><h3>Nepal Telecom (NTC)</h3><span class="date">12 Jan – 27 Mar 2026</span></div>
+      <p class="meta">Engineering Intern · Pokhara, Nepal</p>
+      <p>Participated in handover and load-balancing activities, with exposure to GSM/LTE network planning, operation, optimization, and maintenance.</p>
+      <p>The internship provided practical context for our final-year project on cellular mobility and network optimization.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-row" aria-labelledby="education-heading">
+  <h2 class="section-label" id="education-heading">Education</h2>
+  <div class="section-body">
+    <article class="entry">
+      <div class="date-line"><h3>Tribhuvan University</h3><span class="date">2022–2026</span></div>
+      <p class="meta">Institute of Engineering · Paschimanchal Campus, Pokhara</p>
+      <p>B.E. in Electronics, Communication and Information Engineering<br><strong>79.02% · First Division</strong></p>
+      <p class="small-note">Nepal Engineering Council engineering licensing examination passed.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-row" aria-labelledby="courses-heading">
+  <h2 class="section-label" id="courses-heading">Further learning</h2>
+  <div class="section-body">
+    <ul class="course-list">
+      {% for course in profile.courses %}{% if loop.index <= 2 %}
+      <li><a href="{{ course.url }}">{{ course.title }}</a><span class="meta">{{ course.issuer }} · Coursera · {{ course.date }}</span></li>
+      {% endif %}{% endfor %}
+    </ul>
+    <p class="inline-links"><a href="/cv/#courses">All course credentials</a></p>
+  </div>
+</section>
+
+<section class="section-row" aria-labelledby="contact-heading">
+  <h2 class="section-label" id="contact-heading">Contact</h2>
+  <div class="section-body">
+    <p>I’m interested in graduate research that connects wireless systems with machine learning, and in opportunities to explore new applications of both.</p>
+    <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+  </div>
+</section>
+{% endblock %}
