@@ -6,10 +6,10 @@
     <p class="hero-fieldline">{{ profile.professionalTitle }}</p>
     <p class="profile-credential">{{ profile.license }}</p>
     <div class="intro-copy">
-      <p>My work spans wireless communications and machine learning. I co-developed and evaluated a cellular handover controller using Python and PyTorch. At Nepal Telecom, I gained practical exposure to GSM/LTE network operations.</p>
-      <p>I’m seeking research assistant opportunities and funded graduate study for Fall 2027. I want to study how radio access networks adapt to changing conditions and how well models generalize to new network layouts.</p>
+      <p>I study wireless communications and machine learning. I co-developed a cellular handover controller in Python and PyTorch and helped evaluate it against a conventional baseline in matched simulations. My Nepal Telecom internship gave me practical exposure to GSM/LTE network operations.</p>
+      <p>I’m seeking research assistant opportunities and funded graduate study for Fall 2027. I’d like to help a lab implement baselines, run controlled experiments, and evaluate how well models work under changing network conditions.</p>
     </div>
-    <div class="intro-actions" role="group" aria-label="Research and CV">
+    <div class="intro-actions" role="group" aria-label="Contact and CV">
       <a class="primary-link" href="mailto:{{ profile.email }}">Email me</a>
       <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">Academic CV (PDF)</a>
     </div>
@@ -41,11 +41,12 @@
   <article class="section-body">
     <h3 class="publication-title"><a href="/research/">Graph learning for cellular handover</a></h3>
     <p class="status">First author with Sulav Kandel · {{ profile.paperStatus }}</p>
-    <p>I contributed to the controller implementation, policy evaluation, validation, and manuscript. This study grew from our year-long LTE handover and load-balancing project.</p>
+    <p>Our paired simulation study found that three learned policies improved aggregate throughput and reduced handovers against the configured A3-style baseline. Short cell stays became more common.</p>
     <div class="inline-links">
-      <a href="/research/">Study and results</a>
+      <a href="/research/#contribution-heading">My contribution</a>
+      <a href="/research/#findings-heading">Results and tradeoffs</a>
       <a href="/assets/documents/handover-study.pdf">Manuscript (PDF)</a>
-      <a href="{{ profile.code }}">Research code</a>
+      <a href="/research/#public-checks">Public code checks</a>
     </div>
   </article>
 </section>
@@ -71,6 +72,7 @@
       <h3>Artificial intelligence and machine learning</h3>
       <p>Machine learning · deep learning · neural networks · graph neural networks · reinforcement learning</p>
       <p>When do graph models generalize to network layouts they have never seen?</p>
+      <p><a href="/research/#next-study">Proposed graph versus MLP comparison</a></p>
     </article>
   </div>
 </section>

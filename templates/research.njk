@@ -18,7 +18,7 @@
       <p><strong>Study summary.</strong> In 639 held-out Kathmandu-area simulation cases, the three learned policies achieved 8.86–9.99% higher aggregate throughput and 36.08–53.00% fewer handovers per hour than the configured A3-style baseline. Short cell stays became more common.</p>
       <p class="small-note">The comparison measures the controller as a whole under simulated conditions. The benefit of graph attention and performance on live networks remain open questions.</p>
     </div>
-    <nav class="project-toc research-toc" aria-label="Research sections"><a href="#findings-heading">Findings</a><a href="#contribution-heading">My contribution</a><a href="#method-heading">Method</a><a href="#evaluation-heading">Evaluation</a><a href="#limits-heading">Code, data &amp; limits</a></nav>
+    <nav class="project-toc research-toc" aria-label="Research sections"><a href="#findings-heading">Findings</a><a href="#contribution-heading">My contribution</a><a href="#method-heading">Method</a><a href="#evaluation-heading">Evaluation</a><a href="#public-checks">Public code checks</a><a href="#limits-heading">Limits</a><a href="#next-study">Proposed study</a></nav>
   </header>
 
   <section class="section-row" aria-labelledby="question-heading">
@@ -35,7 +35,7 @@
       <p>I was the first author, working collaboratively with Sulav Kandel. My contributions covered code development, policy evaluation and validation, analysis, and manuscript preparation.</p>
       <dl class="contribution-list">
         <div><dt>Controller implementation</dt><dd>Contributed to the code for the graph-attention and dueling Double-DQN study.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/models/graph_q.py">Graph-attention model</a><a href="{{ profile.code }}/blob/main/src/toponet/agents/ddqn.py">Double-DQN agent</a></span></dd></div>
-        <div><dt>Evaluation &amp; validation</dt><dd>Worked on evaluating frozen policies under matched route, radio, and traffic conditions, and checking the simulation comparisons.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/replay.py">Policy replay</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Numerical checks</a></span></dd></div>
+        <div><dt>Evaluation &amp; validation</dt><dd>Helped evaluate frozen policies under matched route, radio, and traffic conditions and validate the simulation comparisons.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/replay.py">Policy replay</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Numerical checks</a></span></dd></div>
         <div><dt>Analysis &amp; writing</dt><dd>Analyzed service and switching tradeoffs, and helped prepare and revise the manuscript with my co-author.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/analysis.py">Analysis code</a><a href="{{ profile.code }}/tree/main/paper">Manuscript and figures</a></span></dd></div>
       </dl>
       <p>The paper grew from our one-year undergraduate major project in semesters 7–8. We revised that broader handover-and-load-balancing work into a focused, two-author study of handover optimization.</p>
@@ -95,6 +95,10 @@
       <p>The comparison does not establish live-network performance or isolate the benefit of graph attention. A later-added load-aware rule is an exploratory diagnostic, separate from the main configured reference comparison.</p>
       <p>The public repository contains code, configurations, numerical checks, and the manuscript. Full reproduction of the reported results additionally requires route/layout inputs, frozen checkpoints, and complete case records that are outside the public release.</p>
       <div class="inline-links"><a href="{{ profile.code }}/blob/main/docs/RESULTS.md">Results and limitations</a><a href="{{ profile.code }}/blob/main/docs/DATA_AND_REPRODUCIBILITY.md">Data and reproduction details</a><a href="{{ profile.code }}/blob/main/docs/ARCHITECTURE.md">Implementation guide</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Public code checks</a></div>
+      <h3 id="public-checks">Run the public code checks</h3>
+      <p>The public repository includes numerical checks covering the controller, simulator, and baseline behavior. After <a href="{{ profile.code }}#install">installing the package</a>, run this from the repository root:</p>
+      <pre><code>python -m unittest discover -s tests -p 'test_core.py' -v</code></pre>
+      <p class="small-note">These checks exercise the implementation with small inputs. Reproducing the paper’s reported results requires the additional experiment assets listed above.</p>
       <details class="citation">
         <summary>Citation</summary>
         <pre><code id="bibtex">@unpublished{tamang2026handover,
@@ -111,11 +115,13 @@
     </div>
   </section>
 </article>
-<section class="section-row" aria-labelledby="interests-heading">
-  <h2 class="section-label" id="interests-heading">Looking ahead</h2>
+<section class="section-row" id="next-study" aria-labelledby="next-study-heading">
+  <h2 class="section-label" id="next-study-heading">Proposed study</h2>
   <div class="section-body">
-    <p><strong>A next experiment I would like to pursue:</strong> compare graph-based and graph-free policies under matched training and evaluation budgets, then test them on changed topologies and imperfect observations. This would help distinguish the value of graph structure from the broader learned-controller design.</p>
-    <p>The repository includes a graph-free comparison workflow; completed comparison results are not part of the public release. I’m also interested in 5G/6G systems, edge AI, and broader applications of machine learning.</p>
+    <h3>Does graph structure help handover policies generalize?</h3>
+    <p>I would compare a graph-attention policy with a graph-free multilayer perceptron (MLP) using the same observations, action constraints, training budget, and evaluation scenarios. I would test changes in cell layout and delayed signal or load measurements separately so each comparison answers a specific question.</p>
+    <p>I would compare throughput, handover frequency, and short cell stays across multiple seeds, then report paired differences and uncertainty. The first deliverable would be a small runnable benchmark with synthetic layouts, settings, and per-scenario outputs that another researcher could inspect.</p>
+    <p class="small-note">The repository includes a <a href="{{ profile.code }}/tree/main/hpcorbit">graph-free comparison workflow</a>. Results and the proposed public benchmark are pending.</p>
   </div>
 </section>
 {% endblock %}
