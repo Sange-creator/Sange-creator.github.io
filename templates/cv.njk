@@ -5,12 +5,12 @@
   <section class="download-item" aria-labelledby="academic-cv-heading"><h2 id="academic-cv-heading">Academic CV</h2><p>Research, education, experience, projects, and further learning. Two pages.</p><a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">View academic CV <span class="small-note">(PDF)</span></a><div class="inline-links"><a href="/assets/documents/Saange_Tamang_Academic_CV.pdf" download>Download</a></div></section>
   <section class="download-item" aria-labelledby="brief-cv-heading"><h2 id="brief-cv-heading">Concise research CV</h2><p>A one-page version for an initial introduction or research inquiry.</p><a href="/assets/documents/Saange_Tamang_Research_CV.pdf">View concise CV <span class="small-note">(PDF)</span></a><div class="inline-links"><a href="/assets/documents/Saange_Tamang_Research_CV.pdf" download>Download</a></div></section>
 </div>
-<section class="section-row" id="education" aria-labelledby="education-heading" data-reveal>
+<section class="section-row" id="education" aria-labelledby="education-heading">
   <h2 class="section-label" id="education-heading">Education</h2>
   <div class="section-body">
     <ol class="education-timeline" data-reveal aria-label="Education timeline">
     {% for education in profile.educationTimeline %}
-      <li class="timeline-entry" data-reveal>
+      <li class="timeline-entry">
         <time class="timeline-period">{{ education.period }}</time>
         <div class="timeline-content">
           <h3>{{ education.heading }}</h3>

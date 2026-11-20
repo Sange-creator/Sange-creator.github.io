@@ -2,25 +2,22 @@
 {% block content %}
 <section class="intro intro-revised hero-layout" aria-labelledby="intro-title">
   <div class="hero-copy">
-    <p class="intro-kicker">{{ profile.license }}</p>
-    <h1 id="intro-title">{{ profile.professionalTitle }}</h1>
-    <p class="hero-fieldline">Wireless communications <span aria-hidden="true">×</span> AI/ML</p>
+    <h1 id="intro-title">{{ profile.name }}</h1>
+    <p class="hero-fieldline">{{ profile.professionalTitle }}</p>
+    <p class="profile-credential">{{ profile.license }}</p>
     <div class="intro-copy">
-      <p>I’m an Electronics, Communication and Information Engineer licensed by the Nepal Engineering Council, exploring how AI/ML can improve wireless systems. My first-author study—accepted for the <strong>19th IOE Graduate Conference</strong>—uses graph attention and Double DQN to study cellular handover; I contributed to implementation, evaluation, validation, analysis, and manuscript revision.</p>
-      <p>My one-year final project and NTC internship strengthened my interest in radio access networks, 5G/6G, deep learning, neural networks, and graph neural networks. I keep learning by building and evaluating ideas, and I’m seeking funded graduate research where I can study communication systems and AI/ML together.</p>
+      <p>My work spans wireless communications and machine learning. I co-developed and evaluated a cellular handover controller using Python and PyTorch. At Nepal Telecom, I gained practical exposure to GSM/LTE network operations.</p>
+      <p>I’m seeking research assistant opportunities and funded graduate study for Fall 2027. I want to study how radio access networks adapt to changing conditions and how well models generalize to new network layouts.</p>
     </div>
     <div class="intro-actions" role="group" aria-label="Research and CV">
-      <a class="primary-link" href="/research/">Read the research</a>
+      <a class="primary-link" href="mailto:{{ profile.email }}">Email me</a>
       <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">Academic CV (PDF)</a>
     </div>
-    <p class="availability">Master’s or PhD research opportunities · Fall 2027</p>
   </div>
   <aside class="hero-contact" aria-label="Profile and contact links">
     <img class="hero-portrait" src="/assets/images/saange-tamang.webp" width="{{ sizes['saange-tamang'].width }}" height="{{ sizes['saange-tamang'].height }}" alt="Portrait of Saange Tamang" fetchpriority="high">
     <div class="hero-contact-heading">
-      <h2>{{ profile.name }}</h2>
-      <p>{{ profile.license }}</p>
-      <p>Institute of Engineering · Tribhuvan University</p>
+      <p>Paschimanchal Campus, Institute of Engineering<br>Tribhuvan University · Nepal</p>
     </div>
     <nav class="social-links" aria-label="Contact and social profiles">
       <a class="social-link" href="mailto:{{ profile.email }}">
@@ -40,45 +37,56 @@
 </section>
 
 <section class="home-section featured-research" aria-labelledby="research-heading">
-  <div class="section-heading"><h2 id="research-heading">Research</h2><a href="/research/">Full study and supporting material</a></div>
-  <div class="section-body">
-    <h3 class="publication-title"><a href="/research/">{{ profile.paperTitle }}</a></h3>
-    <p class="authors"><strong>Saange Tamang</strong>, Sulav Kandel</p>
-    <p class="status">{{ profile.paperStatus }}</p>
-    <p class="research-question">How can a moving phone maintain good service without switching cells unnecessarily?</p>
-    <p class="finding-summary"><strong>What we found:</strong> across the three frozen policies, aggregate throughput was <strong>8.86–9.99% higher</strong> and handovers per hour were <strong>36.08–53.00% fewer</strong> on the reserved Kathmandu-area cases, compared with the configured A3-style reference. The share of short completed stays increased. These are simulation findings.</p>
-    <div class="research-perspectives">
-      <div><h4>Wireless problem</h4><p>Serving-cell selection under changing signal conditions, mobility, and cell load. We assessed throughput alongside handovers, ping-pongs, weak service, and short cell stays.</p></div>
-      <div><h4>Learning approach</h4><p>A graph-attention encoder and dueling Double DQN, compared with a configured A3-style controller under matched simulation conditions.</p></div>
+  <div class="section-heading"><h2 id="research-heading">Selected research</h2></div>
+  <article class="section-body">
+    <h3 class="publication-title"><a href="/research/">Graph learning for cellular handover</a></h3>
+    <p class="status">First author with Sulav Kandel · {{ profile.paperStatus }}</p>
+    <p>I contributed to the controller implementation, policy evaluation, validation, and manuscript. This study grew from our year-long LTE handover and load-balancing project.</p>
+    <div class="inline-links">
+      <a href="/research/">Study and results</a>
+      <a href="/assets/documents/handover-study.pdf">Manuscript (PDF)</a>
+      <a href="{{ profile.code }}">Research code</a>
     </div>
-    <div class="research-bottom">
-      <p class="research-scale">639 reserved Kathmandu-area cases<br>540 Pokhara route–layout–condition groups</p>
-      <div class="inline-links">
-          <a href="/research/">Study overview</a>
-          <a href="/assets/documents/handover-study.pdf">Paper <span class="small-note">(PDF)</span></a>
-          <a href="{{ profile.code }}">Code</a>
-      </div>
-    </div>
-  </div>
+  </article>
 </section>
 
-<section class="home-section interests research-directions" aria-labelledby="interests-heading" data-reveal>
-  <div class="section-heading"><h2 id="interests-heading">Research interests</h2><p>Questions across communication systems and learning</p></div>
+<section class="home-section research-skills" aria-labelledby="skills-heading">
+  <div class="section-heading"><h2 id="skills-heading">Research skills</h2></div>
+  <dl class="research-skill-list">
+    <div><dt>Model implementation</dt><dd>Python and PyTorch for graph attention and deep reinforcement learning. <a href="/research/#contribution-heading">Controller work</a></dd></div>
+    <div><dt>Experiment design and analysis</dt><dd>Matched simulation cases, baseline comparisons, and paired analysis of throughput and mobility tradeoffs. <a href="/research/#evaluation-heading">Evaluation protocol</a></dd></div>
+    <div><dt>Network configuration and analysis</dt><dd>IP connectivity, DHCP and DNS in Packet Tracer, and packet inspection in Wireshark. <a href="/projects/#computer-networks">Lab assignments</a></dd></div>
+  </dl>
+</section>
+
+<section class="home-section interests research-directions" aria-labelledby="interests-heading">
+  <div class="section-heading"><h2 id="interests-heading">Research interests</h2></div>
   <div class="interest-fields">
     <article class="interest-field">
-      <p class="interest-index">01 / COMMUNICATION SYSTEMS</p>
       <h3>Wireless &amp; radio access networks</h3>
       <p>Wireless communications · 5G/6G · RAN · mobility management · cellular network optimization</p>
+      <p>How do delayed signal and load measurements affect mobility decisions?</p>
     </article>
     <article class="interest-field">
-      <p class="interest-index">02 / INTELLIGENT METHODS</p>
-      <h3>AI/ML for network decisions</h3>
+      <h3>Artificial intelligence and machine learning</h3>
       <p>Machine learning · deep learning · neural networks · graph neural networks · reinforcement learning</p>
+      <p>When do graph models generalize to network layouts they have never seen?</p>
     </article>
   </div>
 </section>
 
-<section class="home-section" aria-labelledby="projects-heading" data-reveal>
+<section class="home-section" id="experience" aria-labelledby="experience-heading">
+  <div class="section-heading"><h2 id="experience-heading">Telecommunications experience</h2></div>
+  <div class="section-body">
+    <article class="entry">
+      <div class="date-line"><h3>Nepal Telecom (NTC)</h3><span class="date">12 Jan – 27 Mar 2026</span></div>
+      <p class="meta">Engineering Intern · Pokhara, Nepal</p>
+      <p>Participated in handover and load-balancing activities, with exposure to GSM/LTE network planning, operation, optimization, and maintenance.</p>
+    </article>
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="projects-heading">
   <div class="section-heading"><h2 id="projects-heading">Projects &amp; practical work</h2><a href="/projects/">Project details and source</a></div>
   <div class="project-index">
     <article class="entry project-index-entry">
@@ -120,24 +128,12 @@
   </div>
 </section>
 
-<section class="home-section" id="experience" aria-labelledby="experience-heading" data-reveal>
-  <div class="section-heading"><h2 id="experience-heading">Telecommunications experience</h2></div>
-  <div class="section-body">
-    <article class="entry">
-      <div class="date-line"><h3>Nepal Telecom (NTC)</h3><span class="date">12 Jan – 27 Mar 2026</span></div>
-      <p class="meta">Engineering Intern · Pokhara, Nepal</p>
-      <p>Participated in handover and load-balancing activities, with exposure to GSM/LTE network planning, operation, optimization, and maintenance.</p>
-      <p>The internship gave me practical context for the questions we were studying in our final-year project: how cellular networks operate, how mobility affects service, and what it means to optimize a network beyond a simulation.</p>
-    </article>
-  </div>
-</section>
-
-<section class="home-section" id="education" aria-labelledby="education-heading" data-reveal>
+<section class="home-section" id="education" aria-labelledby="education-heading">
   <div class="section-heading"><h2 id="education-heading">Education</h2></div>
   <div class="section-body">
     <ol class="education-timeline" data-reveal aria-label="Education timeline">
     {% for education in profile.educationTimeline %}
-      <li class="timeline-entry" data-reveal>
+      <li class="timeline-entry">
         <time class="timeline-period">{{ education.period }}</time>
         <div class="timeline-content">
           <h3>{{ education.heading }}</h3>
@@ -151,7 +147,7 @@
   </div>
 </section>
 
-<section class="home-section" aria-labelledby="courses-heading" data-reveal>
+<section class="home-section" aria-labelledby="courses-heading">
   <div class="section-heading"><h2 id="courses-heading">Continuing to learn</h2><p>Alongside projects and research</p></div>
   <div class="section-body">
     <ul class="course-list course-list-home">
@@ -163,12 +159,4 @@
   </div>
 </section>
 
-<section class="home-section contact-section" aria-labelledby="contact-heading" data-reveal>
-  <div class="section-heading"><h2 id="contact-heading">Graduate research</h2></div>
-  <div class="section-body">
-    <p>I’m seeking a funded, research-based master’s or PhD opportunity for Fall 2027. I’m particularly interested in groups studying wireless network optimization, learning-based control, or reliable applied ML.</p>
-    <p>I can contribute experience in Python/PyTorch implementation, simulation evaluation, and analysis, while developing deeper expertise through close research collaboration.</p>
-    <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
-  </div>
-</section>
 {% endblock %}
