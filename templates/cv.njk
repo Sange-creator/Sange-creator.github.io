@@ -8,9 +8,14 @@
 <section class="section-row" aria-labelledby="education-heading">
   <h2 class="section-label" id="education-heading">Education</h2>
   <div class="section-body">
-    <div class="date-line"><h3>Tribhuvan University · Institute of Engineering</h3><span class="date">2022–2026</span></div>
-    <p>B.E. in Electronics, Communication and Information Engineering<br>Paschimanchal Campus (Western Region Campus), Pokhara, Nepal</p>
-    <p><strong>79.02% aggregate · First Division</strong></p>
+    {% for education in profile.education %}
+    <article class="entry education-entry">
+      <div class="date-line"><h3>{{ education.heading }}</h3>{% if education.period %}<span class="date">{{ education.period }}</span>{% endif %}</div>
+      {% if education.institutionNote %}<p class="meta">{{ education.institutionNote }}</p>{% endif %}
+      {% if education.qualification %}<p>{{ education.qualification }}</p>{% endif %}
+      {% if education.result %}<p class="education-result"><strong>{{ education.result }}</strong></p>{% endif %}
+    </article>
+    {% endfor %}
     <p class="small-note">Relevant coursework: Wireless Communication, Computer Network, Telecommunications, Artificial Intelligence, Data Mining, Probability &amp; Statistics, and Discrete Structure.</p>
   </div>
 </section>

@@ -14,6 +14,11 @@
       <a href="{{ profile.code }}">Research code</a>
       <a href="/assets/documents/handover-study.bib" download>Download citation</a>
     </div>
+    <div class="study-summary">
+      <p><strong>Study summary.</strong> In matched simulation comparisons, three frozen learned policies delivered higher aggregate throughput and fewer handovers than the configured A3-style reference. On reserved Kathmandu-area cases, throughput was 8.86–9.99% higher and handovers per hour were 36.08–53.00% fewer; the share of short completed stays increased.</p>
+      <p class="small-note">First-author collaborative study. Findings describe the tested simulator and saved policies; they do not establish live-network performance or isolate graph attention’s benefit.</p>
+    </div>
+    <nav class="project-toc research-toc" aria-label="Research sections"><a href="#findings-heading">Findings</a><a href="#contribution-heading">My contribution</a><a href="#method-heading">Method</a><a href="#evaluation-heading">Evaluation</a><a href="#limits-heading">Code, data &amp; limits</a></nav>
   </header>
 
   <section class="section-row" aria-labelledby="question-heading">
@@ -27,7 +32,12 @@
   <section class="section-row" aria-labelledby="contribution-heading">
     <h2 class="section-label" id="contribution-heading">My contribution</h2>
     <div class="section-body">
-      <p>I contributed to the implementation, evaluation, validation, analysis, and manuscript preparation, working collaboratively with Sulav Kandel.</p>
+      <p>I was the first author, working collaboratively with Sulav Kandel. My contributions covered code development, policy evaluation and validation, analysis, and manuscript preparation.</p>
+      <dl class="contribution-list">
+        <div><dt>Controller implementation</dt><dd>Contributed to the code for the graph-attention and dueling Double-DQN study.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/models/graph_q.py">Graph-attention model</a><a href="{{ profile.code }}/blob/main/src/toponet/agents/ddqn.py">Double-DQN agent</a></span></dd></div>
+        <div><dt>Evaluation &amp; validation</dt><dd>Worked on evaluating frozen policies under matched route, radio, and traffic conditions, and checking the simulation comparisons.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/replay.py">Policy replay</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Numerical checks</a></span></dd></div>
+        <div><dt>Analysis &amp; writing</dt><dd>Analyzed service and switching tradeoffs, and helped prepare and revise the manuscript with my co-author.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/analysis.py">Analysis code</a><a href="{{ profile.code }}/tree/main/paper">Manuscript and figures</a></span></dd></div>
+      </dl>
       <p>The paper grew from our one-year undergraduate major project in semesters 7–8. We revised that broader handover-and-load-balancing work into a focused, two-author study of handover optimization.</p>
       <p><a href="/projects/#major-project">Undergraduate project background</a></p>
     </div>
@@ -79,12 +89,12 @@
   </section>
 
   <section class="section-row" aria-labelledby="limits-heading">
-    <h2 class="section-label" id="limits-heading">Interpretation</h2>
+    <h2 class="section-label" id="limits-heading">Code, data &amp; limits</h2>
     <div class="section-body">
       <p>These are simulation findings. The study uses simplified radio and resource-sharing models, three training seeds, some shared roads between training and reserved routes, and simulator-provided information. Pokhara uses real road geometry with synthetic cell layouts.</p>
       <p>The comparison does not establish live-network performance or isolate the benefit of graph attention. A later-added load-aware rule is an exploratory diagnostic, separate from the main configured reference comparison.</p>
       <p>The public repository contains code, configurations, numerical checks, and the manuscript. Full reproduction of the reported results additionally requires route/layout inputs, frozen checkpoints, and complete case records that are outside the public release.</p>
-      <div class="inline-links"><a href="{{ profile.code }}/blob/main/docs/RESULTS.md">Results and limitations</a><a href="{{ profile.code }}/blob/main/docs/DATA_AND_REPRODUCIBILITY.md">Data and reproduction details</a></div>
+      <div class="inline-links"><a href="{{ profile.code }}/blob/main/docs/RESULTS.md">Results and limitations</a><a href="{{ profile.code }}/blob/main/docs/DATA_AND_REPRODUCIBILITY.md">Data and reproduction details</a><a href="{{ profile.code }}/blob/main/docs/ARCHITECTURE.md">Implementation guide</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Public code checks</a></div>
       <details class="citation">
         <summary>Citation</summary>
         <pre><code id="bibtex">@unpublished{tamang2026handover,
@@ -104,8 +114,8 @@
 <section class="section-row" aria-labelledby="interests-heading">
   <h2 class="section-label" id="interests-heading">Looking ahead</h2>
   <div class="section-body">
-    <p>I’m exploring how learning-based controllers generalize when network conditions or topology change, and how imperfect observations affect their decisions. I’m also interested in 5G/6G systems, edge AI, and other engineering applications of machine learning.</p>
-    <p class="small-note">These are research interests and questions for future work.</p>
+    <p><strong>A next experiment I would like to pursue:</strong> compare graph-based and graph-free policies under matched training and evaluation budgets, then test them on changed topologies and imperfect observations. This would help distinguish the value of graph structure from the broader learned-controller design.</p>
+    <p>The repository includes a graph-free comparison workflow; completed comparison results are not part of the public release. I’m also interested in 5G/6G systems, edge AI, and broader applications of machine learning.</p>
   </div>
 </section>
 {% endblock %}

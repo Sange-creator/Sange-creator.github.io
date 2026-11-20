@@ -33,9 +33,32 @@
       <a href="/cv/"{% if page.nav == 'cv' %} aria-current="page"{% endif %}>CV</a>
     </nav>
   </header>
-  <main id="main" class="shell">
-    {% block content %}{% endblock %}
-  </main>
+  <div class="page-grid shell{% if page.path == '/404.html' %} page-grid-single{% endif %}">
+    <main id="main" class="content-column">
+      {% block content %}{% endblock %}
+    </main>
+    {% if page.path != '/404.html' %}
+    <aside class="profile-rail" aria-labelledby="profile-name">
+      <img class="rail-portrait" src="/assets/images/saange-tamang.webp" width="{{ sizes['saange-tamang'].width }}" height="{{ sizes['saange-tamang'].height }}" alt="Portrait of Saange Tamang" fetchpriority="high">
+      <h2 id="profile-name">{{ profile.name }}</h2>
+      <p class="rail-role">Electronics, Communication &amp; Information Engineering</p>
+      <p class="rail-affiliation">Institute of Engineering<br>Tribhuvan University · 2026</p>
+      <div class="rail-rule"></div>
+      <p class="rail-location">Nepal</p>
+      <nav class="rail-links" aria-label="Profile and contact links">
+        <a href="mailto:{{ profile.email }}">Email</a>
+        <a href="{{ profile.linkedin }}">LinkedIn</a>
+        <a href="{{ profile.github }}">GitHub</a>
+        <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">Academic CV (PDF)</a>
+        <a href="/research/">Research paper</a>
+      </nav>
+      <div class="rail-interests">
+        <p class="rail-label">Research interests</p>
+        <p>Wireless communications<br>Machine learning</p>
+      </div>
+    </aside>
+    {% endif %}
+  </div>
   <footer class="site-footer shell">
     <p>Saange Tamang · Nepal</p>
     <p>Updated {{ profile.updated }} · <a href="mailto:{{ profile.email }}">Email</a> · <a href="{{ profile.github }}/Sange-creator.github.io">Site source</a></p>

@@ -24,7 +24,7 @@ The output is plain HTML, CSS, fonts, figures, and PDFs in `dist/`. Core content
 
 ## Editing
 
-- `content/profile.mjs`: name, public links, current paper title/status, update label, and verified courses.
+- `content/profile.mjs`: name, public links, current paper title/status, education, update label, and verified courses.
 - `templates/`: Home, Research, Projects, CV, and custom 404 page, with a shared layout.
 - `site/assets/style.css`: responsive typography, layout, focus styles, reduced-motion and print styles.
 - `site/assets/documents/`: downloadable CVs, public paper, and original results figure.
@@ -44,6 +44,7 @@ The site is intended for the root user-site URL. For a repository subpath or a n
 - Research figures and the paper come from the [public research repository](https://github.com/Sange-creator/graph-attention-double-dqn-cellular-handover). The map figure retains attribution to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), ODbL.
 - Source Serif 4 and Source Sans 3 are self-hosted through Fontsource. Their font licenses are included in the built font directory.
 - Credentials link directly to issuer verification records. Course completions are presented separately from demonstrated project skills.
+- Education includes the author-provided SEE GPA 3.9 (2019), +2 at Kathmandu Model College, and the verified bachelor’s record. Unknown +2 dates/grades and the SEE school are omitted.
 - The portrait is author-provided. Its image content is preserved; web copies are resized/compressed without retaining source metadata.
 - JAMJAMNEPAL is an ongoing side project for domestic and international visitors, with AI integration planned. The public repository currently provides the Go/Fiber/MongoDB foundation.
 - Networking preparation is supported by the four [Computer-Network assignment folders](https://github.com/Sange-creator/Computer-Network), including Packet Tracer configurations and saved Wireshark captures. Raw captures and device identifiers are not republished in this website.

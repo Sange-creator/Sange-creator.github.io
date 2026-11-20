@@ -2,46 +2,28 @@
 {% block content %}
 <section class="intro intro-revised" aria-labelledby="intro-title">
   <div class="intro-main">
-    <h1 id="intro-title">Saange Tamang</h1>
-    <p class="discipline-line">Wireless communications <span aria-hidden="true">&amp;</span><span class="sr-only">and</span> machine learning</p>
+    <p class="intro-kicker">Wireless systems · Machine learning</p>
+    <h1 id="intro-title">When should a phone change cells?</h1>
     <div class="intro-copy">
-      <p>I’m an Electronics, Communication and Information Engineering graduate from Tribhuvan University, Nepal. My research interests span <strong>wireless communications</strong> and <strong>AI/ML</strong>, with recent work on graph-based reinforcement learning for cellular handover.</p>
-      <p>Over a year-long major project and its revision into a focused conference study, I worked on implementation, experiments, validation, analysis, and writing. That experience made me want to pursue research more deeply. I want to keep learning by building, testing, and revising.</p>
+      <p>I’m an electronics and communication engineering graduate exploring how machine learning can help wireless networks make better decisions as people move. A handover can improve a connection, but frequent switching can also disrupt it.</p>
+      <p>My first-author study applies graph-based reinforcement learning to this problem and was accepted for presentation at the <strong>19th IOE Graduate Conference (2026)</strong>. It grew from our one-year final project; I worked collaboratively on implementation, evaluation, validation, analysis, and manuscript revision.</p>
     </div>
-    <div class="contact-links" role="group" aria-label="Contact and profiles">
-      <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">Academic CV <span class="small-note">(PDF)</span></a>
-      <a href="mailto:{{ profile.email }}">Email</a>
-      <a href="{{ profile.github }}">GitHub</a>
-      <a href="{{ profile.linkedin }}">LinkedIn</a>
+    <div class="intro-actions" role="group" aria-label="Research and CV">
+      <a class="primary-link" href="/research/">Read the research</a>
+      <a href="/assets/documents/Saange_Tamang_Academic_CV.pdf">Academic CV (PDF)</a>
     </div>
-    <p class="availability">Seeking funded master’s or PhD research opportunities · Fall 2027</p>
-  </div>
-  <figure class="profile-portrait">
-    <img src="/assets/images/saange-tamang.webp" width="{{ sizes['saange-tamang'].width }}" height="{{ sizes['saange-tamang'].height }}" alt="Portrait of Saange Tamang" fetchpriority="high">
-    <figcaption>Tribhuvan University<br>Institute of Engineering · Paschimanchal Campus</figcaption>
-  </figure>
-</section>
-
-<section class="interests" aria-label="Research interests">
-  <div>
-    <h2>Wireless communications</h2>
-    <p>Mobility management, cellular network optimization, and 5G/6G networks.</p>
-    <p class="interest-question">How can network decisions remain reliable as radio conditions and traffic load change?</p>
-  </div>
-  <div>
-    <h2>Machine learning</h2>
-    <p>Reinforcement learning, graph neural networks, and broader applications of AI/ML.</p>
-    <p class="interest-question">What helps a learned model generalize, and how can we evaluate where its assumptions fail?</p>
+    <p class="availability">Seeking funded master’s or PhD research opportunities for Fall 2027.</p>
   </div>
 </section>
 
 <section class="home-section featured-research" aria-labelledby="research-heading">
-  <div class="section-heading"><h2 id="research-heading">Research</h2><p>From a year-long project to a focused study</p></div>
+  <div class="section-heading"><h2 id="research-heading">Research</h2><a href="/research/">Full study and supporting material</a></div>
   <div class="section-body">
     <h3 class="publication-title"><a href="/research/">{{ profile.paperTitle }}</a></h3>
     <p class="authors"><strong>Saange Tamang</strong>, Sulav Kandel</p>
     <p class="status">{{ profile.paperStatus }}</p>
     <p class="research-question">How can a moving phone maintain good service without switching cells unnecessarily?</p>
+    <p class="finding-summary"><strong>What we found:</strong> across the three frozen policies, aggregate throughput was <strong>8.86–9.99% higher</strong> and handovers per hour were <strong>36.08–53.00% fewer</strong> on the reserved Kathmandu-area cases, compared with the configured A3-style reference. The share of short completed stays increased. These are simulation findings.</p>
     <div class="research-perspectives">
       <div><h4>Wireless problem</h4><p>Serving-cell selection under changing signal conditions, mobility, and cell load. We assessed throughput alongside handovers, ping-pongs, weak service, and short cell stays.</p></div>
       <div><h4>Learning approach</h4><p>A graph-attention encoder and dueling Double DQN, compared with a configured A3-style controller under matched simulation conditions.</p></div>
@@ -54,6 +36,19 @@
           <a href="{{ profile.code }}">Code</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="interests research-directions" aria-label="Research interests and next questions">
+  <div>
+    <h2>Wireless communications</h2>
+    <p>Mobility management, cellular network optimization, and 5G/6G networks.</p>
+    <p class="interest-question">How do delayed or imperfect signal and load observations affect handover decisions?</p>
+  </div>
+  <div>
+    <h2>Machine learning</h2>
+    <p>Reinforcement learning, graph neural networks, and broader applications of AI/ML.</p>
+    <p class="interest-question">When does graph structure help a learned policy, and does that benefit survive a change in network topology?</p>
   </div>
 </section>
 
@@ -114,12 +109,15 @@
 <section class="home-section" aria-labelledby="education-heading">
   <div class="section-heading"><h2 id="education-heading">Education</h2></div>
   <div class="section-body">
-    <article class="entry">
-      <div class="date-line"><h3>Tribhuvan University</h3><span class="date">2022–2026</span></div>
-      <p class="meta">Institute of Engineering · Paschimanchal Campus, Pokhara</p>
-      <p>B.E. in Electronics, Communication and Information Engineering<br><strong>79.02% · First Division</strong></p>
-      <p class="small-note">Nepal Engineering Council engineering licensing examination passed.</p>
+    {% for education in profile.education %}
+    <article class="entry education-entry">
+      <div class="date-line"><h3>{{ education.heading }}</h3>{% if education.period %}<span class="date">{{ education.period }}</span>{% endif %}</div>
+      {% if education.institutionNote %}<p class="meta">{{ education.institutionNote }}</p>{% endif %}
+      {% if education.qualification %}<p>{{ education.qualification }}</p>{% endif %}
+      {% if education.result %}<p class="education-result"><strong>{{ education.result }}</strong></p>{% endif %}
     </article>
+    {% endfor %}
+    <p class="small-note qualification-note">Nepal Engineering Council engineering licensing examination passed.</p>
   </div>
 </section>
 
@@ -138,8 +136,8 @@
 <section class="home-section contact-section" aria-labelledby="contact-heading">
   <div class="section-heading"><h2 id="contact-heading">Graduate research</h2></div>
   <div class="section-body">
-    <p>I’m keen to contribute to a research group working on wireless systems, AI/ML, or their applications. I want to learn through close collaboration, take responsibility for careful experiments, and develop the depth to turn a promising question into a well-supported result.</p>
-    <p class="small-note">Interested in funded master’s or PhD opportunities for Fall 2027.</p>
+    <p>I’m seeking a funded, research-based master’s or PhD opportunity for Fall 2027. I’m particularly interested in groups studying wireless network optimization, learning-based control, or reliable applied ML.</p>
+    <p>I can contribute experience in Python/PyTorch implementation, simulation evaluation, and analysis, while developing deeper expertise through close research collaboration.</p>
     <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
   </div>
 </section>
