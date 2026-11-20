@@ -7,7 +7,7 @@
 <article>
   <header class="paper-header">
     <h2>{{ profile.paperTitle }}</h2>
-    <p class="authors"><strong>Saange Tamang</strong>, Sulav Kandel<br><span class="small-note">Paschimanchal Campus, Institute of Engineering, Tribhuvan University</span></p>
+    <p class="authors"><strong>Saange Tamang</strong> (first author), Sulav Kandel (co-author)<br><span class="small-note">Paschimanchal Campus, Institute of Engineering, Tribhuvan University</span></p>
     <p class="status">{{ profile.paperStatus }}<br><span class="small-note">Proceedings citation pending.</span></p>
     <div class="inline-links">
       <a href="/assets/documents/handover-study.pdf">Read paper <span class="small-note">(PDF)</span></a>
@@ -32,7 +32,7 @@
   <section class="section-row" aria-labelledby="contribution-heading">
     <h2 class="section-label" id="contribution-heading">My contribution</h2>
     <div class="section-body">
-      <p>I was the first author, working collaboratively with Sulav Kandel. My contributions covered code development, policy evaluation and validation, analysis, and manuscript preparation.</p>
+      <p>I was the first author of the study. Sulav Kandel was my co-author. My contributions covered code development, policy evaluation and validation, analysis, and manuscript preparation.</p>
       <dl class="contribution-list">
         <div><dt>Controller implementation</dt><dd>Contributed to the code for the graph-attention and dueling Double-DQN study.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/models/graph_q.py">Graph-attention model</a><a href="{{ profile.code }}/blob/main/src/toponet/agents/ddqn.py">Double-DQN agent</a></span></dd></div>
         <div><dt>Evaluation &amp; validation</dt><dd>Helped evaluate frozen policies under matched route, radio, and traffic conditions and validate the simulation comparisons.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/replay.py">Policy replay</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Numerical checks</a></span></dd></div>
