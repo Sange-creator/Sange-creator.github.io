@@ -33,7 +33,7 @@ const env = nunjucks.configure(join(root, 'templates'), { autoescape: true, thro
 const pages = [
   { template: 'home.njk', file: 'index.html', path: '/', title: 'Saange Tamang | Wireless Communications & Machine Learning', nav: 'home', description: 'Saange Tamang’s research, engineering projects, and academic background in wireless communications and machine learning.' },
   { template: 'research.njk', file: 'research/index.html', path: '/research/', title: 'Research | Saange Tamang', nav: 'research', description: 'Graph attention and Double DQN for cellular handover: methods, paired simulation evaluation, findings, and limitations.' },
-  { template: 'projects.njk', file: 'projects/index.html', path: '/projects/', title: 'Projects | Saange Tamang', nav: 'projects', description: 'Selected engineering work: GNN-DQN handover and load balancing, SolVote, and a native macOS clipboard application.' },
+  { template: 'projects.njk', file: 'projects/index.html', path: '/projects/', title: 'Projects | Saange Tamang', nav: 'projects', description: 'Wireless and ML research projects, SolVote, JAMJAMNEPAL tourism development, Packet Tracer and Wireshark networking labs, and macOS software.' },
   { template: 'cv.njk', file: 'cv/index.html', path: '/cv/', title: 'Curriculum Vitae | Saange Tamang', nav: 'cv', description: 'Academic CV, research experience, telecommunications internship, technical preparation, and verified course credentials.' },
   { template: '404.njk', file: '404.html', path: '/404.html', title: 'Page not found | Saange Tamang', nav: '', description: 'Return to Saange Tamang’s academic website.' }
 ];

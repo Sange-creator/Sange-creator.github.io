@@ -44,6 +44,9 @@ The site is intended for the root user-site URL. For a repository subpath or a n
 - Research figures and the paper come from the [public research repository](https://github.com/Sange-creator/graph-attention-double-dqn-cellular-handover). The map figure retains attribution to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), ODbL.
 - Source Serif 4 and Source Sans 3 are self-hosted through Fontsource. Their font licenses are included in the built font directory.
 - Credentials link directly to issuer verification records. Course completions are presented separately from demonstrated project skills.
+- The portrait is author-provided. Its image content is preserved; web copies are resized/compressed without retaining source metadata.
+- JAMJAMNEPAL is an ongoing side project for domestic and international visitors, with AI integration planned. The public repository currently provides the Go/Fiber/MongoDB foundation.
+- Networking preparation is supported by the four [Computer-Network assignment folders](https://github.com/Sange-creator/Computer-Network), including Packet Tracer configurations and saved Wireshark captures. Raw captures and device identifiers are not republished in this website.
 
 No transcripts, registration numbers, internship certificate scans, private experiment inputs, account secrets, or analytics are included. The published contact email is the author’s professional contact address.
 

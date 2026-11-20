@@ -1,6 +1,7 @@
 {% extends 'layout.njk' %}
 {% block content %}
-<div class="page-heading"><h1>Selected projects</h1><p>Research and engineering work across wireless networks, machine learning, and software systems.</p></div>
+<div class="page-heading"><h1>Projects &amp; practical work</h1><p>I learn through implementation and experiments: from wireless and ML research to application development, network configuration, and packet analysis.</p></div>
+<nav class="project-toc" aria-label="Projects on this page"><a href="#major-project">Major project</a><a href="#solvote">SolVote</a><a href="#jamjamnepal">Tourism app</a><a href="#computer-networks">Networking labs</a><a href="#clipboard-history">macOS app</a></nav>
 
 <article class="project-block" id="major-project">
   <h2>GNN-DQN Handover Optimization &amp; Load Balancing</h2>
@@ -24,13 +25,37 @@
   <div class="inline-links"><a href="https://github.com/Sange-creator/Project-Solvote">Project repository</a></div>
 </article>
 
+<article class="project-block" id="jamjamnepal">
+  <h2>JAMJAMNEPAL — Tourism app</h2>
+  <p class="project-meta">Ongoing side project · Go, Fiber, MongoDB · AI integration planned</p>
+  <p>I’m developing a tourism application for domestic and international visitors to Nepal. It gives me a way to explore software engineering beyond my wireless research and work toward an application with a practical audience.</p>
+  <p>The current public code establishes a Go/Fiber server and MongoDB connection, with server-rendered templates, a health endpoint, and a handler test. I’m building on that foundation and plan to integrate AI as the project develops.</p>
+  <p>I’m still exploring which AI capabilities will be useful in the travel experience. The project is in development; the public version does not yet include the planned AI integration.</p>
+  <div class="inline-links"><a href="https://github.com/Sange-creator/GO_Tourism_Project">Current project code</a></div>
+</article>
+
+<article class="project-block" id="computer-networks">
+  <h2>Computer networks: configuration &amp; packet analysis</h2>
+  <p class="project-meta">Hands-on coursework · Cisco Packet Tracer · Wireshark</p>
+  <p>In Cisco Packet Tracer, I configured device IP addresses and tested communication within a home network and between two networks using ping and simulated message transfer. Further assignments explored DHCP and DNS server configuration.</p>
+  <p>Using Wireshark, I captured and filtered traffic to examine address assignment and name resolution at the packet level. My saved DHCP capture records the Discover–Offer–Request–ACK sequence; the DNS assignment includes queries and responses for A, AAAA, and HTTPS records.</p>
+  <p>These assignments helped me connect protocol concepts with observable network behavior: configuring a network, generating traffic, and inspecting the resulting packets.</p>
+  <ul class="lab-links">
+    <li><a href="https://github.com/Sange-creator/Computer-Network/tree/main/Assignment%201">IP configuration &amp; local connectivity</a><span>Home-network simulation and message transfer.</span></li>
+    <li><a href="https://github.com/Sange-creator/Computer-Network/tree/main/Assignment%202">Communication between networks</a><span>Ping checks and simulated message delivery.</span></li>
+    <li><a href="https://github.com/Sange-creator/Computer-Network/tree/main/Assignment%203">DHCP simulation &amp; capture</a><span>Packet Tracer configuration, Wireshark filtering, and address-allocation messages.</span></li>
+    <li><a href="https://github.com/Sange-creator/Computer-Network/tree/main/Assignment%204">DNS simulation &amp; resolution</a><span>Server configuration and inspection of DNS queries and responses.</span></li>
+  </ul>
+  <div class="inline-links"><a href="https://github.com/Sange-creator/Computer-Network">Networking assignment repository</a></div>
+</article>
+
 <article class="project-block" id="clipboard-history">
   <h2>Clipboard History for macOS</h2>
   <p class="project-meta">Supporting software project · Swift · Native macOS application</p>
   <p>A menu-bar application that keeps a searchable history of copied text locally on the Mac. It supports finding and reusing clips, pausing capture, clearing history, and a configurable keyboard shortcut.</p>
   <p>The repository includes the Swift implementation, tests, and a script to build a universal macOS app. The application has no account or server requirement.</p>
-  <p class="small-note">Clipboard history is stored locally as unencrypted text. This project is a productivity tool, not a secret store.</p>
+  <p class="small-note">Local text storage, with pause-capture and clear-history controls.</p>
   <div class="inline-links"><a href="https://github.com/Sange-creator/ClipboardHistory">Source and build instructions</a></div>
 </article>
-<section class="closing"><h2>Current interests</h2><p>I’m exploring new research questions in wireless communications and AI/ML, including network optimization, generalization, and learning under practical system constraints.</p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></section>
+<section class="closing"><h2>What I want to explore next</h2><p>I’m interested in 5G/6G networks, network optimization, and AI/ML applications beyond communications. I want to build on these projects through more careful experiments, stronger technical foundations, and collaboration with researchers.</p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></section>
 {% endblock %}

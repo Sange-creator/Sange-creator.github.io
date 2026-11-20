@@ -44,4 +44,12 @@ assert(home.includes('Wireless communications') && home.includes('Machine learni
 assert(home.includes('semesters 7–8') && home.includes('Semester 6'), 'Missing corrected project history');
 assert(home.includes('Accepted for presentation'), 'Missing research status');
 assert(home.includes('First Division') && !home.includes('top of faculty'), 'Unexpected academic claim');
+const projectAnchors = ['major-project', 'solvote', 'jamjamnepal', 'computer-networks', 'clipboard-history'];
+const projectPositions = projectAnchors.map(id => home.indexOf('href="/projects/#' + id + '"'));
+assert(projectPositions.every((position, index) => position >= 0 && (index === 0 || position > projectPositions[index - 1])), 'Unexpected homepage project order');
+const projectPage = html.get(join(root, 'projects/index.html'));
+const detailPositions = projectAnchors.map(id => projectPage.indexOf('id="' + id + '"'));
+assert(detailPositions.every((position, index) => position >= 0 && (index === 0 || position > detailPositions[index - 1])), 'Unexpected project detail order');
+assert(home.includes('saange-tamang.webp') && home.includes('Portrait of Saange Tamang'), 'Missing supplied portrait');
+assert(projectPage.includes('AI integration planned') && projectPage.includes('Wireshark'), 'Missing project status or assignment evidence');
 console.log('Checked ' + pages.length + ' pages, ' + checked + ' local links/assets, PDFs, privacy exclusions, and core content.');
