@@ -3,9 +3,13 @@
 \input{common}
 \hypersetup{pdftitle={Saange Tamang - Research CV}}
 \pagestyle{empty}
+\renewcommand{\sect}[1]{%
+  \par\vspace{6pt}{\color{accent}\fontsize{11}{13}\selectfont\bfseries #1}%
+  \par\vspace{2pt}{\color{rulegray}\hrule height .35pt}\vspace{3pt}%
+}
 \setlist[itemize]{itemsep=2pt,topsep=3pt}
 \begin{document}
-\fontsize{10.5}{13.4}\selectfont
+\fontsize{10.5}{12.7}\selectfont
 \nameheader
 
 \sect{Education}
@@ -35,11 +39,17 @@ B.E. in Electronics, Communication and Information Engineering\par
 \item Explored hybrid mesh topology in Cisco Packet Tracer. Attended training led by senior engineers on cell-site connectivity, DNS, NAT, VPNs, and international upstream links.
 \end{itemize}
 
-\sect{Undergraduate major project}
+\sect{Undergraduate projects}
 \entry{LTE handover optimization and load balancing}{2025--2026}
 \meta{Four-person team, semesters 7--8. Supervisor: Asst. Prof. Hom Nath Tiwari.}
 Contributed to implementation and evaluation. The subsequent two-author conference study grew from this project and focused on handover optimization.\enspace
 \href{https://github.com/Sange-creator/GNN-DQN-Handover-LoadBalancing}{Project code/report}
+
+\vspace{3pt}
+\entry{SolVote: Electronic Voting Prototype}{2025}
+\meta{Undergraduate minor project, semester 6}
+Helped implement and evaluate a team prototype for voter registration, Solana token issuance, and voting.\enspace
+\href{https://github.com/Sange-creator/Project-Solvote}{Project code}
 
 \sect{Technical preparation}
 \textbf{Research:} Python, PyTorch, NumPy, Matplotlib, Git, LaTeX. Paired evaluation and cluster-bootstrap intervals.\par
