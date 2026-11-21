@@ -13,10 +13,10 @@ export const profile = {
   education: [
     { heading: 'Paschimanchal Campus · Institute of Engineering', qualification: 'B.E. in Electronics, Communication and Information Engineering', institutionNote: 'Tribhuvan University · Pokhara, Nepal', period: '2022–2026', result: '79.02% · First Division' },
     { heading: 'Kathmandu Model College', qualification: 'Higher Secondary Education (+2)', institutionNote: '', period: '2019–2021', result: '' },
-    { heading: 'Secondary Education Examination (SEE)', qualification: '', institutionNote: '', period: '2019', result: 'GPA 3.9' }
+    { heading: 'Secondary Education Examination (SEE)', qualification: '', institutionNote: '', period: '2018', result: 'GPA 3.9' }
   ],
   educationTimeline: [
-    { period: '2019', heading: 'Secondary Education Examination (SEE)', institution: '', result: 'GPA 3.9' },
+    { period: '2018', heading: 'Secondary Education Examination (SEE)', institution: '', result: 'GPA 3.9' },
     { period: '2019–2021', heading: 'Higher Secondary Education (+2)', institution: 'Kathmandu Model College', result: '' },
     { period: '2022–2026', heading: 'B.E. in Electronics, Communication and Information Engineering', institution: 'Paschimanchal Campus · Institute of Engineering · Tribhuvan University', result: '79.02% · First Division' }
   ],

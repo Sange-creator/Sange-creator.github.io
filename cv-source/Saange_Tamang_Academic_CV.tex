@@ -23,30 +23,30 @@ B.E. in Electronics, Communication and Information Engineering\par
 Selected results: Discrete Structure 95/100; Computer Network 86/100; Data Mining 81/100; Project II 97/100.\par
 \vspace{3pt}
 \textbf{Higher secondary (+2):} Kathmandu Model College\hfill{\color{muted}\fontsize{10}{12}\selectfont 2019--2021}\par
-\textbf{Secondary Education Examination (SEE):} GPA 3.9\hfill{\color{muted}\fontsize{10}{12}\selectfont 2019}
+\textbf{Secondary Education Examination (SEE):} GPA 3.9\hfill{\color{muted}\fontsize{10}{12}\selectfont 2018}
 
 \sect{Conference paper}
 \textbf{Saange Tamang}, Sulav Kandel. ``Graph-Attention Double-DQN for Cellular Handover: A Paired Simulation Evaluation.''\par
-\meta{19th IOE Graduate Conference, 2026. Accepted for presentation; proceedings citation pending.}
+\meta{19th IOE Graduate Conference, 2026. Accepted for presentation. Proceedings citation pending.}
 \paperlink\enspace |\enspace\codelink
 
 \sect{Research experience}
 \entry{Graph learning and reinforcement learning for cellular handover}{2026}
 \meta{First author: Saange Tamang. Co-author: Sulav Kandel.}
 \begin{itemize}
-\item Co-developed research code, evaluated and validated policy outputs, analyzed service/switching tradeoffs, and prepared the manuscript with Sulav Kandel, revising the year-long major project into a focused handover study.
-\item Studied a graph-attention encoder and dueling Double-DQN controller using a 46-cell graph, 15 features per cell, and feasible-action masking, against a configured LTE Event A3-style reference.
-\item Evaluated three frozen policies under matched simulation conditions across 639 reserved Kathmandu-area cases and 540 Pokhara route--layout--condition groups.
-\item Reported 8.86--9.99\% higher aggregate throughput and 36.1--53.0\% fewer handovers per hour in Kathmandu tests; Pokhara transfer tests showed 3.66--3.85\% higher throughput, relative to the configured reference.
-\item Used paired 95\% cluster-bootstrap intervals (2,000 resamples) and assessed ping-pongs, weak-service time, and short-stay tradeoffs alongside throughput and switching.
+\item Led technical implementation and training. Built the Python simulator and PyTorch controller using a 46-cell graph, 15 features per cell, and action masking.
+\item Designed and ran matched comparisons of three frozen policies with a configured LTE A3-style baseline across 639 reserved Kathmandu-area cases and 540 Pokhara transfer groups.
+\item Used paired cluster-bootstrap intervals to assess the tradeoff. Kathmandu-area simulations showed 8.86--9.99\% higher aggregate throughput and 36.1--53.0\% fewer handovers per hour, with a higher share of short completed stays.
 \end{itemize}
-\meta{Scope: simulated radio and traffic conditions; Pokhara uses real road geometry with synthetic cell layouts. Results do not establish live-network performance or isolate the causal benefit of graph attention. Public code does not include all assets required to reproduce the reported evaluation.}
+\meta{Sulav Kandel gathered observations that motivated the study and checked site coordinates against OpenStreetMap. We shared manuscript preparation equally.}
+\meta{Both evaluations used real road geometry with simulated radio and traffic. Pokhara used synthetic cell layouts. Operator drive-test logs were unavailable for research use.}
 
 \sect{Telecommunications experience}
 \entry{Nepal Telecom (NTC), Pokhara}{12 Jan--27 Mar 2026}
 \meta{Engineering Intern}
 \begin{itemize}
-\item Participated in handover and load-balancing activities and gained exposure to GSM/LTE network planning, operation, optimization, and maintenance.
+\item Joined a vehicle-based cellular drive test and observed route-based measurement collection. Accompanied a tower maintenance visit and examined installed routers and server-room infrastructure.
+\item Explored hybrid mesh topology in Cisco Packet Tracer. Attended training led by senior engineers on cell-site connectivity, DNS, NAT, VPNs, and international upstream links.
 \end{itemize}
 
 \newpage

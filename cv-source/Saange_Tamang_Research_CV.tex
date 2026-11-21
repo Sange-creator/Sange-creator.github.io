@@ -1,59 +1,50 @@
 \documentclass[10pt,letterpaper]{article}
-\usepackage[margin=.61in,top=.48in,bottom=.48in]{geometry}
+\usepackage[margin=.67in,top=.56in,bottom=.54in]{geometry}
 \input{common}
 \hypersetup{pdftitle={Saange Tamang - Research CV}}
 \pagestyle{empty}
-\setlist[itemize]{itemsep=2pt,topsep=2pt}
-\setlength{\parskip}{1.5pt}
-\renewcommand{\sect}[1]{\par\vspace{5pt}{\color{accent}\fontsize{10.4}{12}\selectfont\bfseries #1}\par\vspace{2pt}{\color{rulegray}\hrule height .35pt}\vspace{3pt}}
+\setlist[itemize]{itemsep=2pt,topsep=3pt}
 \begin{document}
-\fontsize{10}{12}\selectfont
+\fontsize{10.5}{13.4}\selectfont
 \nameheader
 
 \sect{Education}
-\entry{Paschimanchal Campus, Institute of Engineering}{2022--2026}
+\entry{Tribhuvan University, Institute of Engineering}{2022--2026}
 B.E. in Electronics, Communication and Information Engineering\par
-\meta{Tribhuvan University, Pokhara, Nepal\enspace |\enspace\textbf{79.02\%; First Division}}
-\textbf{+2:} Kathmandu Model College (2019--2021)\enspace |\enspace\textbf{SEE:} GPA 3.9 (2019)
-
-\sect{Research interests}
-\textbf{Wireless:} RAN, 5G/6G, mobility management, and cellular network optimization.\par
-\textbf{AI/ML:} deep learning, neural networks, graph neural networks, reinforcement learning, and reliable evaluation.
-
-\sect{Conference paper}
-\textbf{Saange Tamang}, Sulav Kandel. ``Graph-Attention Double-DQN for Cellular Handover: A Paired Simulation Evaluation.''\par
-\meta{19th IOE Graduate Conference, 2026. Accepted for presentation; proceedings citation pending.}
-\paperlink\enspace |\enspace\codelink
+\meta{Paschimanchal Campus, Pokhara, Nepal \enspace|\enspace 79.02\% aggregate, First Division}
 
 \sect{Research experience}
-\entry{Graph learning and reinforcement learning for cellular handover}{2026}
+\entry{Cellular handover with graph reinforcement learning}{2026}
 \meta{First author: Saange Tamang. Co-author: Sulav Kandel.}
 \begin{itemize}
-\item Co-developed research code, validated policy outputs, analyzed service/switching tradeoffs, and prepared the manuscript with Sulav Kandel for a focused extension of the major project.
-\item Evaluated a graph-attention, dueling Double-DQN controller on a 46-cell graph with 15 features per cell and action masking; compared three frozen policies with a configured A3-style reference.
-\item Evaluated 639 reserved Kathmandu-area cases and 540 Pokhara transfer groups. Reported 8.86--9.99\% higher throughput and 36.1--53.0\% fewer handovers/hour in Kathmandu; Pokhara throughput increased 3.66--3.85\% versus the reference.
-\item Used paired cluster-bootstrap intervals to assess service/switching tradeoffs. Results describe matched simulation conditions, not live-network performance or causal proof of graph attention's benefit.
+\item Led the technical work: implemented the Python simulator and PyTorch controller, trained graph-attention and dueling Double DQN policies, and validated the evaluation pipeline.
+\item Designed and ran a matched comparison of three frozen policies against a configured LTE A3-style baseline across 639 reserved Kathmandu-area cases and 540 Pokhara transfer groups.
+\item In Kathmandu-area simulations, aggregate throughput rose by 8.86--9.99\% and handovers per hour fell by 36.1--53.0\%. The share of short completed stays increased for all three policies.
+\item Co-wrote the paper with Sulav Kandel, who gathered field observations and checked site coordinates against OpenStreetMap.
 \end{itemize}
+
+\sect{Conference paper}
+\textbf{Saange Tamang}, Sulav Kandel. \emph{Graph-Attention Double-DQN for Cellular Handover: A Paired Simulation Evaluation.}\par
+\meta{Accepted for presentation at the 19th IOE Graduate Conference (2026).}
+\paperlink\enspace |\enspace\codelink
 
 \sect{Telecommunications experience}
 \entry{Nepal Telecom (NTC), Pokhara --- Engineering Intern}{12 Jan--27 Mar 2026}
-Participated in handover and load-balancing activities; gained exposure to GSM/LTE network planning, operation, optimization, and maintenance.
+\begin{itemize}
+\item Joined a vehicle-based cellular drive test and observed how engineers collected measurements along the route. Accompanied the team on a cell tower maintenance visit and examined installed routers and server-room infrastructure.
+\item Explored hybrid mesh topology in Cisco Packet Tracer. Attended training led by senior engineers on cell-site connectivity, DNS, NAT, VPNs, and international upstream links.
+\end{itemize}
 
-\sect{Selected projects}
-\entry{GNN-DQN Handover Optimization and Load Balancing in LTE Networks}{2025--2026}
-\meta{Major project; one year, semesters 7--8; four-person team; supervisor: Hom Nath Tiwari}
-Collaborated on graph-based RL for mobility and load balancing; revised into the subsequent handover-focused conference study.\enspace\href{https://github.com/Sange-creator/GNN-DQN-Handover-LoadBalancing}{Code/report}\par\vspace{3pt}
-\entry{SolVote: Electronic Voting and Token Distribution Prototype}{Semester 6, 2025}
-Collaborative minor project using React/TypeScript, Node.js/Express, MongoDB, and Solana.\enspace\href{https://github.com/Sange-creator/Project-Solvote}{Code}
+\sect{Undergraduate major project}
+\entry{LTE handover optimization and load balancing}{2025--2026}
+\meta{Four-person team, semesters 7--8. Supervisor: Asst. Prof. Hom Nath Tiwari.}
+Contributed to implementation and evaluation. The subsequent two-author conference study grew from this project and focused on handover optimization.\enspace
+\href{https://github.com/Sange-creator/GNN-DQN-Handover-LoadBalancing}{Project code/report}
 
 \sect{Technical preparation}
-\textbf{Wireless:} LTE handover, RSRP/SINR, simulated load models, paired service/switching evaluation.\par
-\textbf{AI/ML:} graph attention, dueling Double DQN, replay buffers, action masking, transfer evaluation.\par
-\textbf{Networking labs:} Cisco Packet Tracer, Wireshark; IP configuration, ICMP/ping, DHCP/DNS, capture/filtering.\par
-\textbf{Tools:} Python, PyTorch, NumPy, Matplotlib, Git/GitHub, LaTeX; C/C++ (coursework).
+\textbf{Research:} Python, PyTorch, NumPy, Matplotlib, Git, LaTeX. Paired evaluation and cluster-bootstrap intervals.\par
+\textbf{Networking:} LTE handover, RSRP/SINR, Cisco Packet Tracer, Wireshark.
+\href{https://github.com/Sange-creator/Computer-Network}{Networking labs}\par
+\textbf{Interests:} Cellular mobility and 5G/6G RAN. Graph learning, reinforcement learning, and model evaluation.
 
-\sect{Courses and qualification}
-\href{https://www.coursera.org/account/accomplishments/verify/3WMVQTJX2BQC}{Advanced Learning Algorithms} (Sep 2026);\enspace
-\href{https://www.coursera.org/account/accomplishments/verify/H85L1YRD0MWM}{Supervised Machine Learning: Regression and Classification} (Aug 2026). DeepLearning.AI and Stanford Online, via Coursera.\par
-Licensed Engineer, Nepal Engineering Council.
 \end{document}

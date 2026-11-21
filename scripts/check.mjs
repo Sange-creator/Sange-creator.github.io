@@ -49,7 +49,7 @@ assert(home.includes('class="social-link"') && home.includes('linkedin.com/in/sa
 assert(home.includes('semesters 7–8') && home.includes('Semester 6'), 'Missing corrected project history');
 assert(home.includes('Accepted for presentation'), 'Missing research status');
 assert(home.includes('First Division') && !home.includes('top of faculty'), 'Unexpected academic claim');
-for (const text of ['Kathmandu Model College', 'Secondary Education Examination (SEE)', 'GPA 3.9', '2019', '2019–2021', 'Paschimanchal Campus']) {
+for (const text of ['Kathmandu Model College', 'Secondary Education Examination (SEE)', 'GPA 3.9', '2018', '2019–2021', 'Paschimanchal Campus']) {
   assert(home.includes(text) && html.get(join(root, 'cv/index.html')).includes(text), 'Missing education detail: ' + text);
 }
 assert((home.match(/class="timeline-entry"/g) || []).length === 3, 'Expected all three education timeline entries');

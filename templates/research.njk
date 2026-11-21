@@ -32,11 +32,11 @@
   <section class="section-row" aria-labelledby="contribution-heading">
     <h2 class="section-label" id="contribution-heading">My contribution</h2>
     <div class="section-body">
-      <p>I was the first author of the study. Sulav Kandel was my co-author. My contributions covered code development, policy evaluation and validation, analysis, and manuscript preparation.</p>
+      <p>I led the technical work for the two-author conference study, from implementation and training through evaluation and analysis. Sulav Kandel collected field observations to motivate the study, extracted site locations, and cross-checked coordinates against OpenStreetMap. We shared the manuscript writing and revision equally.</p>
       <dl class="contribution-list">
-        <div><dt>Controller implementation</dt><dd>Contributed to the code for the graph-attention and dueling Double-DQN study.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/models/graph_q.py">Graph-attention model</a><a href="{{ profile.code }}/blob/main/src/toponet/agents/ddqn.py">Double-DQN agent</a></span></dd></div>
-        <div><dt>Evaluation &amp; validation</dt><dd>Helped evaluate frozen policies under matched route, radio, and traffic conditions and validate the simulation comparisons.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/replay.py">Policy replay</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Numerical checks</a></span></dd></div>
-        <div><dt>Analysis &amp; writing</dt><dd>Analyzed service and switching tradeoffs, and helped prepare and revise the manuscript with my co-author.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/analysis.py">Analysis code</a><a href="{{ profile.code }}/tree/main/paper">Manuscript and figures</a></span></dd></div>
+        <div><dt>Implementation &amp; training</dt><dd>I implemented the Python simulator and PyTorch controller and trained the graph-attention, dueling Double-DQN policies.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/models/graph_q.py">Graph-attention model</a><a href="{{ profile.code }}/blob/main/src/toponet/agents/ddqn.py">Double-DQN agent</a></span></dd></div>
+        <div><dt>Evaluation &amp; validation</dt><dd>I designed and ran the paired comparison of three frozen policies against a configured A3-style baseline under matched routes, radio, and traffic.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/replay.py">Policy replay</a><a href="{{ profile.code }}/blob/main/tests/test_core.py">Numerical checks</a></span></dd></div>
+        <div><dt>Analysis</dt><dd>I analyzed paired differences in throughput and handovers and found that fewer handovers could coincide with a higher share of short stays.<span class="artifact-links"><a href="{{ profile.code }}/blob/main/src/toponet/evaluation/analysis.py">Analysis code</a><a href="{{ profile.code }}/tree/main/paper">Manuscript and figures</a></span></dd></div>
       </dl>
       <p>The paper grew from our one-year undergraduate major project in semesters 7–8. We revised that broader handover-and-load-balancing work into a focused, two-author study of handover optimization.</p>
       <p><a href="/projects/#major-project">Undergraduate project background</a></p>
@@ -91,6 +91,7 @@
   <section class="section-row" aria-labelledby="limits-heading">
     <h2 class="section-label" id="limits-heading">Code, data &amp; limits</h2>
     <div class="section-body">
+      <p>Nepal Telecom drive-test logs were unavailable for research use. The highway dashboard observations helped motivate the study. Kathmandu used mapped cell-site locations and Pokhara used synthetic cell layouts. Both evaluations used real road geometry with simulated radio and traffic.</p>
       <p>These are simulation findings. The study uses simplified radio and resource-sharing models, three training seeds, some shared roads between training and reserved routes, and simulator-provided information. Pokhara uses real road geometry with synthetic cell layouts.</p>
       <p>The comparison does not establish live-network performance or isolate the benefit of graph attention. A later-added load-aware rule is an exploratory diagnostic, separate from the main configured reference comparison.</p>
       <p>The public repository contains code, configurations, numerical checks, and the manuscript. Full reproduction of the reported results additionally requires route/layout inputs, frozen checkpoints, and complete case records that are outside the public release.</p>
