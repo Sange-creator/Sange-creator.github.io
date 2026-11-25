@@ -1,3 +1,9 @@
+## Current published academic CV
+
+The published academic PDF is the one-page reference-format CV updated in November 2026, including Neural Networks and Deep Learning (DeepLearning.AI). Its editable HTML is `Saange_Tamang_CV_Reference_Format.html`. The CV page embeds `site/assets/documents/Saange_Tamang_Academic_CV.pdf` with direct open and download links.
+
+The LaTeX files and build instructions below describe earlier CV versions. Do not overwrite the current academic PDF with the earlier two-page LaTeX build.
+
 # CV sources
 
 Two editable LaTeX documents share `common.tex`. Build both with Tectonic:

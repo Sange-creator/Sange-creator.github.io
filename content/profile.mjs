@@ -21,6 +21,7 @@ export const profile = {
     { period: '2022–2026', heading: 'B.E. in Electronics, Communication and Information Engineering', institution: 'Paschimanchal Campus · Institute of Engineering · Tribhuvan University', result: '79.02% · First Division' }
   ],
   courses: [
+    { title: 'Neural Networks and Deep Learning', issuer: 'DeepLearning.AI', date: 'November 2026', url: 'https://www.coursera.org/account/accomplishments/verify/YAOZKS2R1VHY', group: 'Machine learning' },
     { title: 'Advanced Learning Algorithms', issuer: 'DeepLearning.AI & Stanford Online', date: 'September 2026', url: 'https://www.coursera.org/account/accomplishments/verify/3WMVQTJX2BQC', group: 'Machine learning' },
     { title: 'Supervised Machine Learning: Regression and Classification', issuer: 'DeepLearning.AI & Stanford Online', date: 'August 2026', url: 'https://www.coursera.org/account/accomplishments/verify/H85L1YRD0MWM', group: 'Machine learning' },
     { title: 'Claude Code: Software Engineering with Generative AI Agents', issuer: 'Vanderbilt University', date: 'August 2026', url: 'https://www.coursera.org/account/accomplishments/verify/P4AO5YNOHQLD', group: 'Software engineering' },
