@@ -14,7 +14,7 @@ bash cv-source/build.sh
 
 The PDFs are written to `site/assets/documents/`. Intermediate output remains in `cv-source/.build/` and should not be committed. TeX Gyre Pagella is distributed with standard TeX systems; no proprietary font is required. Standard XeLaTeX also works when run from this directory.
 
-The academic version is two pages; the outreach version is one page. Both retain the original percentage scale and First Division classification, distinguish completed research from 5G/6G interests, and preserve team attribution. Course completions are not degree qualifications or claims of professional certification.
+The archived academic version is two pages; the archived outreach version is one page. Only the latest one-page reference-format academic CV is published. Both retain the original percentage scale and First Division classification, distinguish completed research from 5G/6G interests, and preserve team attribution. Course completions are not degree qualifications or claims of professional certification.
 
 Education was expanded from the user's confirmed details: bachelor's degree at Paschimanchal Campus, Institute of Engineering, Tribhuvan University (2022-2026); higher secondary (+2) at Kathmandu Model College (2019-2021); and SEE in 2018 with GPA 3.9. The one-page outreach CV focuses on university education. No +2 grade or stream, SEE school, or GPA denominator were provided, so none are invented. The bachelor's entry remains most prominent.
 

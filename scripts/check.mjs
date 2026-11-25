@@ -34,11 +34,14 @@ for (const [path, source] of html) {
     checked++;
   }
 }
-for (const filename of ['Saange_Tamang_Academic_CV.pdf', 'Saange_Tamang_Research_CV.pdf', 'handover-study.pdf']) {
+for (const filename of ['Saange_Tamang_Academic_CV.pdf', 'handover-study.pdf']) {
   const file = await readFile(join(root, 'assets/documents', filename));
   assert(file.subarray(0, 5).toString() === '%PDF-', filename + ': not a PDF');
 }
 assert(!files.some(f => /transcript|TRIBHUVAN UNIVERSITY|\.env|credential|token\.json/i.test(f)), 'Private source file in public output');
+const cv = html.get(join(root, 'cv/index.html'));
+assert((cv.match(/class="cv-pdf-viewer"/g) || []).length === 1 && cv.includes('download="Saange_Tamang_Academic_CV.pdf"'), 'Expected one current CV preview and download');
+assert(!files.some(f => f.endsWith('Saange_Tamang_Research_CV.pdf')), 'Older CV should not be published');
 const home = html.get(join(root, 'index.html'));
 assert(home.includes('Wireless communications') && home.toLowerCase().includes('machine learning'), 'Missing balanced interests');
 assert(home.includes('Electronics, Communication and Information Engineer'), 'Missing engineering identity');
@@ -50,10 +53,10 @@ assert(home.includes('semesters 7–8') && home.includes('Semester 6'), 'Missing
 assert(home.includes('Accepted for presentation'), 'Missing research status');
 assert(home.includes('First Division') && !home.includes('top of faculty'), 'Unexpected academic claim');
 for (const text of ['Kathmandu Model College', 'Secondary Education Examination (SEE)', 'GPA 3.9', '2018', '2019–2021', 'Paschimanchal Campus']) {
-  assert(home.includes(text) && html.get(join(root, 'cv/index.html')).includes(text), 'Missing education detail: ' + text);
+  assert(home.includes(text), 'Missing education detail: ' + text);
 }
 assert((home.match(/class="timeline-entry"/g) || []).length === 3, 'Expected all three education timeline entries');
-assert(html.get(join(root, 'cv/index.html')).includes('education-timeline'), 'Missing CV education timeline');
+
 assert(!home.includes('profile-rail') && !html.get(join(root, 'research/index.html')).includes('profile-rail'), 'Profile rail should not constrict or repeat across pages');
 const projectAnchors = ['major-project', 'solvote', 'jamjamnepal', 'computer-networks', 'clipboard-history'];
 const projectPositions = projectAnchors.map(id => home.indexOf('href="/projects/#' + id + '"', home.indexOf('class="project-index"')));

@@ -155,11 +155,10 @@
   <div class="section-heading"><h2 id="courses-heading">Continuing to learn</h2><p>Alongside projects and research</p></div>
   <div class="section-body">
     <ul class="course-list course-list-home">
-      {% for course in profile.courses %}{% if loop.index <= 2 %}
-      <li><a href="{{ course.url }}">{{ course.title }}</a><span class="meta">{{ course.issuer }} · Coursera · {{ course.date }}</span></li>
-      {% endif %}{% endfor %}
+      {% for course in profile.courses %}
+      <li><a href="{{ course.url }}">{{ course.title }}</a><span class="meta">{{ course.issuer }}{% if 'coursera.org' in course.url %} · Coursera{% endif %} · {{ course.date }}</span></li>
+      {% endfor %}
     </ul>
-    <p class="inline-links"><a href="/cv/#courses">All course credentials</a></p>
   </div>
 </section>
 
